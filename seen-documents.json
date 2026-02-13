@@ -1,0 +1,53 @@
+{
+  "lastChecked": "2026-02-12T02:14:38Z",
+  "seenDocuments": [
+    {
+      "document_number": "2025-23510",
+      "title": "Approval Requirements for Issuance of Payment Stablecoins by Subsidiaries of FDIC-Supervised Insured Depository Institutions",
+      "type": "Proposed Rule",
+      "agency": "FDIC",
+      "publication_date": "2025-12-19",
+      "first_seen": "2025-12-19"
+    },
+    {
+      "document_number": "2026-02665",
+      "title": "Approval Requirements for Issuance of Payment Stablecoins by Subsidiaries of FDIC-Supervised Insured Depository Institutions; Extension of Comment Period",
+      "type": "Proposed Rule",
+      "agency": "FDIC",
+      "publication_date": "2026-02-11",
+      "first_seen": "2026-02-11",
+      "notes": "Comment period extension - original deadline Feb 17, 2026 extended to May 18, 2026",
+      "new_comment_deadline": "2026-05-18",
+      "original_comment_deadline": "2026-02-17"
+    },
+    {
+      "document_number": "2026-02868",
+      "title": "Investments in and Licensing of Permitted Payment Stablecoins Issuers",
+      "type": "Proposed Rule",
+      "agency": "NCUA",
+      "publication_date": "2026-02-12",
+      "first_seen": "2026-02-11",
+      "comment_deadline": "2026-04-13",
+      "notes": "NCUA proposed rule for credit unions seeking to become permitted payment stablecoin issuers under GENIUS Act",
+      "url": "https://www.federalregister.gov/public-inspection/2026-02868/investments-in-and-licensing-of-permitted-payment-stablecoins-issuers"
+    }
+  ],
+  "searchTerms": [
+    "GENIUS Act",
+    "stablecoin",
+    "payment stablecoin"
+  ],
+  "trackedAgencies": [
+    "Treasury",
+    "FDIC",
+    "OCC",
+    "Federal Reserve",
+    "FinCEN",
+    "NCUA"
+  ],
+  "trackedDockets": [
+    "TREAS-DO-2025-0037",
+    "FINCEN-2025-0003",
+    "3064-AG20"
+  ]
+}

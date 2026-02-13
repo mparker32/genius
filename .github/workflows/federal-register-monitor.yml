@@ -1,0 +1,166 @@
+name: Federal Register Monitor
+
+on:
+  schedule:
+    # Run every hour at minute 15
+    - cron: '15 * * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  check-federal-register:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check Federal Register for new documents
+        id: check-fr
+        run: |
+          # Create the check script
+          cat << 'EOF' > check-federal-register.js
+          const fs = require('fs');
+          const https = require('https');
+
+          const SEARCH_TERMS = ['GENIUS Act', 'stablecoin', 'payment stablecoin'];
+          const AGENCIES = ['Treasury', 'FDIC', 'OCC', 'Federal Reserve', 'FinCEN'];
+          const SEEN_FILE = 'seen-documents.json';
+
+          function fetch(url) {
+            return new Promise((resolve, reject) => {
+              https.get(url, (res) => {
+                let data = '';
+                res.on('data', chunk => data += chunk);
+                res.on('end', () => resolve(JSON.parse(data)));
+                res.on('error', reject);
+              }).on('error', reject);
+            });
+          }
+
+          async function searchFederalRegister() {
+            const baseUrl = 'https://www.federalregister.gov/api/v1/documents.json';
+            const allDocs = [];
+
+            // Search for each term
+            for (const term of SEARCH_TERMS) {
+              const url = `${baseUrl}?conditions[term]=${encodeURIComponent(term)}&per_page=20&order=newest`;
+              try {
+                const response = await fetch(url);
+                if (response.results) {
+                  allDocs.push(...response.results);
+                }
+              } catch (e) {
+                console.error(`Error searching for ${term}:`, e.message);
+              }
+            }
+
+            // Deduplicate by document_number
+            const unique = {};
+            for (const doc of allDocs) {
+              if (doc.document_number) {
+                unique[doc.document_number] = doc;
+              }
+            }
+
+            return Object.values(unique);
+          }
+
+          async function main() {
+            // Load seen documents
+            let seen = [];
+            try {
+              seen = JSON.parse(fs.readFileSync(SEEN_FILE, 'utf8'));
+            } catch (e) {
+              console.log('No seen-documents.json found, creating new one');
+            }
+
+            const seenSet = new Set(seen);
+
+            // Fetch current documents
+            const docs = await searchFederalRegister();
+            console.log(`Found ${docs.length} total documents`);
+
+            // Find new documents
+            const newDocs = docs.filter(d => !seenSet.has(d.document_number));
+            console.log(`Found ${newDocs.length} new documents`);
+
+            if (newDocs.length > 0) {
+              // Update seen documents
+              const allSeen = [...seen, ...newDocs.map(d => d.document_number)];
+              fs.writeFileSync(SEEN_FILE, JSON.stringify(allSeen, null, 2));
+
+              // Update timestamp in index.html
+              const indexPath = 'index.html';
+              let html = fs.readFileSync(indexPath, 'utf8');
+              const today = new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              });
+              html = html.replace(
+                /<span id="lastUpdated">.*?<\/span>/,
+                `<span id="lastUpdated">${today}</span>`
+              );
+              fs.writeFileSync(indexPath, html);
+
+              // Output for GitHub Actions
+              console.log('::set-output name=has_updates::true');
+              console.log('New documents found:');
+              newDocs.forEach(d => {
+                console.log(`- ${d.title} (${d.type}) - ${d.publication_date}`);
+              });
+
+              // Create summary for commit message
+              const summary = newDocs.map(d => d.title.substring(0, 50)).join('; ');
+              fs.writeFileSync('commit-message.txt', `Update: ${newDocs.length} new Federal Register doc(s)\n\n${summary}`);
+            } else {
+              console.log('::set-output name=has_updates::false');
+              console.log('No new documents found');
+            }
+          }
+
+          main().catch(e => {
+            console.error('Error:', e);
+            process.exit(1);
+          });
+          EOF
+
+          node check-federal-register.js
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [[ -n $(git status --porcelain) ]]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push updates
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          COMMIT_MSG="Auto-update: New Federal Register documents"
+          if [ -f commit-message.txt ]; then
+            COMMIT_MSG=$(cat commit-message.txt)
+          fi
+
+          git add seen-documents.json index.html
+          git commit -m "$COMMIT_MSG"
+          git push
+
+      - name: Notify via Slack (optional)
+        if: steps.changes.outputs.has_changes == 'true' && env.SLACK_WEBHOOK_URL != ''
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+            --data '{"text":"🔔 GENIUS Act Tracker updated with new Federal Register documents!"}' \
+            $SLACK_WEBHOOK_URL

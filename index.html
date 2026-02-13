@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENIUS Act Tracker | Paradigm</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="https://www.paradigm.xyz" class="nav-logo">
+                <img src="Lockup Color.png" alt="Paradigm" class="paradigm-logo-full">
+            </a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header>
+            <div class="header-label">GENIUS ACT TRACKER <span class="arrow">→</span></div>
+            <h1>Tracking Stablecoin Regulation Implementation</h1>
+            <p class="header-description">A comprehensive overview of all rulemaking requirements from the Guiding and Establishing National Innovation for U.S. Stablecoins Act (Public Law 119-27).</p>
+        </header>
+
+        <section class="summary-section collapsible" id="aboutSection">
+            <div class="section-label clickable" onclick="toggleSection('aboutSection')">
+                ABOUT THE GENIUS ACT <span class="collapse-arrow">▼</span>
+            </div>
+            <div class="summary-content collapsible-content">
+                <p>The <strong>Guiding and Establishing National Innovation for U.S. Stablecoins (GENIUS) Act</strong> was enacted on <strong>July 18, 2025</strong> as Public Law 119-27. It establishes the first comprehensive federal regulatory framework for payment stablecoins in the United States.</p>
+                <p>The Act creates a dual regulatory pathway allowing stablecoin issuers to operate under either federal oversight (OCC for national banks, Federal Reserve for state member banks) or state regulation with Treasury certification. It mandates 1:1 reserve backing with high-quality liquid assets, prohibits algorithmic stablecoins, and sets capital, liquidity, and anti-money laundering requirements.</p>
+                <p>Federal agencies have <strong>one year from enactment</strong> (until July 18, 2026) to complete most required rulemakings, with full implementation taking effect <strong>18 months after enactment</strong> (January 18, 2027).</p>
+            </div>
+        </section>
+
+        <section class="summary-section collapsible" id="rulemakingProcessSection">
+            <div class="section-label clickable" onclick="toggleSection('rulemakingProcessSection')">
+                UNDERSTANDING THE RULEMAKING PROCESS <span class="collapse-arrow">▼</span>
+            </div>
+            <div class="summary-content collapsible-content">
+                <p>Federal agencies follow the <strong>Administrative Procedure Act (APA)</strong> when creating new regulations. This process ensures public participation and transparency, but can take months or even years to complete.</p>
+                <p><strong>1. Advanced Notice of Proposed Rulemaking (ANPRM)</strong> — <em>Optional.</em> Some agencies issue an ANPRM to gather early input before drafting a formal rule. This step is not required and many rulemakings skip it entirely.</p>
+                <p><strong>2. Proposed Rule (NPRM) = Comment Period</strong> — <em>This is your opportunity to comment.</em> When an agency publishes a Notice of Proposed Rulemaking in the Federal Register, it opens a public comment period (typically 30-60 days). Anyone can submit comments, and agencies must consider all substantive feedback before finalizing the rule.</p>
+                <p><strong>3. Final Rule</strong> — After the comment period closes and the agency reviews feedback, it publishes a final rule. This can take anywhere from a few months to over a year. The final rule includes the agency's response to significant comments and an effective date.</p>
+                <p>While the GENIUS Act sets deadlines for most rulemakings, agencies frequently miss statutory deadlines with limited practical consequences. Track this page for updates on each rulemaking's progress.</p>
+            </div>
+        </section>
+
+        <section class="progress-section">
+            <div class="section-label">RULEMAKING PROGRESS <span class="arrow">→</span></div>
+            <div class="dual-progress-grid">
+                <!-- Rulemaking Stage Progress -->
+                <div class="progress-block primary">
+                    <div class="progress-block-header">
+                        <span class="progress-block-title">Open for Comment</span>
+                        <span class="progress-block-subtitle">Rulemakings accepting public input</span>
+                    </div>
+                    <div class="progress-main">
+                        <div class="open-comment-number" id="openCommentNumber">0</div>
+                    </div>
+                    <div class="stage-progress-bars">
+                        <div class="stage-progress-row">
+                            <div class="stage-label">
+                                <span class="stage-name">Proposed</span>
+                                <span class="stage-description">NPRM issued</span>
+                            </div>
+                            <div class="stage-bar-container">
+                                <div class="stage-bar proposed" id="proposedBar"></div>
+                            </div>
+                            <div class="stage-fraction" id="proposedFraction">0/25</div>
+                        </div>
+                        <div class="stage-progress-row">
+                            <div class="stage-label">
+                                <span class="stage-name">Final</span>
+                                <span class="stage-description">Rule completed</span>
+                            </div>
+                            <div class="stage-bar-container">
+                                <div class="stage-bar final" id="finalBar"></div>
+                            </div>
+                            <div class="stage-fraction" id="finalFraction">0/25</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Progress -->
+                <div class="progress-block secondary">
+                    <div class="progress-block-header">
+                        <span class="progress-block-title">Timeline</span>
+                        <span class="progress-block-subtitle">Time elapsed toward deadlines</span>
+                    </div>
+                    <div class="progress-main">
+                        <div class="progress-bar-container">
+                            <div class="progress-bar timeline" id="overallProgressBar"></div>
+                        </div>
+                        <div class="progress-percentage" id="overallProgressText">0%</div>
+                    </div>
+                    <div class="progress-stats-compact">
+                        <div class="stat-compact">
+                            <span class="stat-compact-number" id="daysElapsed">0</span>
+                            <span class="stat-compact-label">days since enactment</span>
+                        </div>
+                        <div class="stat-compact">
+                            <span class="stat-compact-number" id="daysToMainDeadline">0</span>
+                            <span class="stat-compact-label">days to rulemaking deadline</span>
+                        </div>
+                    </div>
+                    <div class="timeline-note">
+                        <span class="note-icon">ℹ️</span>
+                        <span class="note-text">Implementation timeline is suggestive. Agencies face no formal penalties for missing deadlines.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="overview-section">
+            <div class="overview-stats">
+                <div class="overview-stat">
+                    <span class="overview-number" id="totalRulemakings">0</span>
+                    <span class="overview-label">Total Rulemakings</span>
+                </div>
+                <div class="overview-stat">
+                    <span class="overview-number" id="totalAgencies">0</span>
+                    <span class="overview-label">Agencies Involved</span>
+                </div>
+                <div class="overview-stat">
+                    <span class="overview-number" id="showing">0</span>
+                    <span class="overview-label">Currently Showing</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="filters-section">
+            <div class="section-label">FILTER RULEMAKINGS <span class="arrow">→</span></div>
+            <div class="quick-filters">
+                <button class="quick-filter-btn priority" id="priorityBtn" onclick="filterPriority()">
+                    <span class="quick-filter-icon">⭐</span> Paradigm Priority
+                </button>
+                <button class="quick-filter-btn" id="openCommentBtn" onclick="filterOpenForComment()">
+                    <span class="quick-filter-icon">💬</span> Open for Comment
+                </button>
+                <button class="quick-filter-btn" id="preRulemakingBtn" onclick="filterPreRulemaking()">
+                    <span class="quick-filter-icon">📋</span> Pre-Rulemaking (ANPRM)
+                </button>
+                <button class="quick-filter-btn" id="notNoticedBtn" onclick="filterNotNoticed()">
+                    <span class="quick-filter-icon">⏳</span> Not Started
+                </button>
+                <button class="quick-filter-btn" id="clearFiltersBtn" onclick="clearAllFilters()">
+                    Clear Filters
+                </button>
+            </div>
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label for="agencyFilter">Agency</label>
+                    <select id="agencyFilter">
+                        <option value="">All Agencies</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="publicationFilter">Publication Status</label>
+                    <select id="publicationFilter">
+                        <option value="">All</option>
+                        <option value="not-noticed">Not Started</option>
+                        <option value="anprm">Pre-Rulemaking (ANPRM)</option>
+                        <option value="open-comment">Proposed Rule — Open for Comment</option>
+                        <option value="nprm">Proposed Rule — Comments Closed</option>
+                        <option value="final">Final Rule</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="rulemakingTypeFilter">Rulemaking Type</label>
+                    <select id="rulemakingTypeFilter">
+                        <option value="">All</option>
+                        <option value="required">Required by Statute</option>
+                        <option value="discretionary">Discretionary</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sortBy">Sort By</label>
+                    <select id="sortBy">
+                        <option value="section">Section Number</option>
+                        <option value="agency">Agency Name</option>
+                        <option value="deadline">Deadline</option>
+                        <option value="comment-deadline">Comment Deadline</option>
+                    </select>
+                </div>
+                <div class="filter-group search-group">
+                    <label for="searchBox">Search</label>
+                    <input type="text" id="searchBox" placeholder="Search requirements...">
+                </div>
+            </div>
+        </section>
+
+        <section class="rulemakings-section">
+            <div class="section-label">RULEMAKINGS <span class="arrow">→</span></div>
+            <div class="rulemakings-list" id="rulemakingsContainer">
+                <!-- Rulemakings will be inserted here -->
+            </div>
+        </section>
+
+        <section class="legend-section">
+            <div class="legend-container">
+                <div class="legend-title">KEY</div>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <span class="priority-badge">⭐ Priority</span>
+                        <span class="legend-description">Rulemakings where Paradigm's input could be particularly impactful based on our policy priorities (AML innovation, tailored capital requirements, technology neutrality, and efficient approval processes)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="rulemaking-type-badge required">Required</span>
+                        <span class="legend-description">Rulemakings that are mandated by the statute using "shall" language with specific deadlines. Agencies are legally required to issue these rules.</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="rulemaking-type-badge discretionary">Discretionary</span>
+                        <span class="legend-description">Rulemakings that agencies "may" issue at their discretion. These are optional and the agency decides whether to pursue them.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container footer-simple">
+            <div class="footer-brand">
+                <img src="Lockup Color.png" alt="Paradigm" class="footer-logo-full">
+            </div>
+            <div class="footer-text">
+                <a href="https://www.paradigm.xyz">paradigm.xyz</a>
+            </div>
+        </div>
+        <div class="last-updated">
+            Last updated: <span id="lastUpdated">February 12, 2026</span>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="fetched-data.js"></script>
+    <script src="paradigm-policy.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
