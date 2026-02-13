@@ -70,7 +70,6 @@ jobs:
           }
 
           async function main() {
-            // Load seen documents (handle object format)
             let seenData = { seenDocuments: [] };
             try {
               seenData = JSON.parse(fs.readFileSync(SEEN_FILE, 'utf8'));
@@ -90,7 +89,6 @@ jobs:
             console.log(`Found ${newDocs.length} new documents`);
 
             if (newDocs.length > 0) {
-              // Add new docs to seen list
               const today = new Date().toISOString().split('T')[0];
               for (const doc of newDocs) {
                 seenData.seenDocuments.push({
@@ -105,10 +103,9 @@ jobs:
               seenData.lastChecked = new Date().toISOString();
               fs.writeFileSync(SEEN_FILE, JSON.stringify(seenData, null, 2));
 
-              // Update timestamp in index.html
               let html = fs.readFileSync('index.html', 'utf8');
               const todayFormatted = new Date().toLocaleDateString('en-US', {
-                year: 'numeric', month: 'long', day: 'numeric'
+                year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/New_York'
               });
               html = html.replace(
                 /<span id="lastUpdated">.*?<\/span>/,
@@ -118,7 +115,7 @@ jobs:
 
               console.log('New documents found:');
               newDocs.forEach(d => console.log(`- ${d.title}`));
-              fs.writeFileSync('commit-message.txt', `Auto-update: ${newDocs.length} new Federal Register doc(s)`);
+              fs.writeFileSync('has-updates.txt', 'true');
             } else {
               console.log('No new documents found');
             }
@@ -128,12 +125,14 @@ jobs:
           EOF
 
           node check-federal-register.js
+          rm check-federal-register.js
 
       - name: Check for changes
         id: changes
         run: |
-          if [[ -n $(git status --porcelain) ]]; then
+          if [ -f has-updates.txt ]; then
             echo "has_changes=true" >> $GITHUB_OUTPUT
+            rm has-updates.txt
           else
             echo "has_changes=false" >> $GITHUB_OUTPUT
           fi
@@ -143,9 +142,8 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          COMMIT_MSG=$(cat commit-message.txt 2>/dev/null || echo "Auto-update: Federal Register check")
           git add seen-documents.json index.html
-          git commit -m "$COMMIT_MSG"
+          git commit -m "Auto-update: New Federal Register documents"
           git push
 
       - name: Notify via Slack
