@@ -1,5 +1,5 @@
 {
-  "lastChecked": "2026-02-13T02:51:02.650Z",
+  "lastChecked": "2026-02-14T09:48:33.938Z",
   "seenDocuments": [
     {
       "document_number": "2025-23510",
@@ -310,6 +310,14 @@
       "agency": "Securities and Exchange Commission",
       "publication_date": "2025-04-16",
       "first_seen": "2026-02-13"
+    },
+    {
+      "document_number": "2026-03086",
+      "title": "Bank Appeals Process",
+      "type": "Proposed Rule",
+      "agency": "Treasury Department",
+      "publication_date": "2026-02-17",
+      "first_seen": "2026-02-14"
     }
   ],
   "searchTerms": [
