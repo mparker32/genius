@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Check Federal Register for new documents
+      - name: Check Federal Register and agency websites
         run: |
           cat << 'EOF' > check-federal-register.js
           const fs = require('fs');
@@ -27,76 +27,371 @@ jobs:
           const SEARCH_TERMS = ['GENIUS Act', 'stablecoin', 'payment stablecoin'];
           const SEEN_FILE = 'seen-documents.json';
 
+          // Agency newsroom RSS/JSON feeds to monitor
+          const AGENCY_FEEDS = [
+            {
+              name: 'OCC News Releases',
+              url: 'https://www.occ.gov/static/news-issuances/ews/occ-news-releases.xml',
+              type: 'xml',
+              agency: 'OCC'
+            },
+            {
+              name: 'OCC Bulletins',
+              url: 'https://www.occ.gov/static/news-issuances/ews/occ-bulletins.xml',
+              type: 'xml',
+              agency: 'OCC'
+            },
+            {
+              name: 'FDIC Press Releases',
+              url: 'https://www.fdic.gov/news/press-releases/index.xml',
+              type: 'xml',
+              agency: 'FDIC'
+            },
+            {
+              name: 'Federal Reserve Press Releases',
+              url: 'https://www.federalreserve.gov/feeds/press_all.xml',
+              type: 'xml',
+              agency: 'Federal Reserve'
+            },
+            {
+              name: 'NCUA News',
+              url: 'https://ncua.gov/newsroom/press-release/rss.xml',
+              type: 'xml',
+              agency: 'NCUA'
+            }
+          ];
+
+          const STABLECOIN_KEYWORDS = [
+            'genius act', 'stablecoin', 'payment stablecoin',
+            'digital asset', 'crypto', 'stable coin'
+          ];
+
           function fetch(url) {
             return new Promise((resolve, reject) => {
-              https.get(url, (res) => {
+              const client = url.startsWith('https') ? https : require('http');
+              client.get(url, { headers: { 'User-Agent': 'GENIUS-Act-Tracker/1.0' } }, (res) => {
+                if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+                  return fetch(res.headers.location).then(resolve).catch(reject);
+                }
                 let data = '';
                 res.on('data', chunk => data += chunk);
-                res.on('end', () => {
-                  try {
-                    resolve(JSON.parse(data));
-                  } catch (e) {
-                    reject(e);
-                  }
-                });
+                res.on('end', () => resolve(data));
                 res.on('error', reject);
               }).on('error', reject);
             });
           }
 
+          function parseXMLItems(xml) {
+            const items = [];
+            const itemRegex = /<item>([\s\S]*?)<\/item>/gi;
+            let match;
+            while ((match = itemRegex.exec(xml)) !== null) {
+              const itemXml = match[1];
+              const title = (itemXml.match(/<title[^>]*>([\s\S]*?)<\/title>/) || [])[1] || '';
+              const link = (itemXml.match(/<link[^>]*>([\s\S]*?)<\/link>/) || [])[1] || '';
+              const pubDate = (itemXml.match(/<pubDate>([\s\S]*?)<\/pubDate>/) || [])[1] || '';
+              const desc = (itemXml.match(/<description>([\s\S]*?)<\/description>/) || [])[1] || '';
+              items.push({
+                title: title.replace(/<!\[CDATA\[(.*?)\]\]>/g, '$1').trim(),
+                link: link.replace(/<!\[CDATA\[(.*?)\]\]>/g, '$1').trim(),
+                pubDate: pubDate.trim(),
+                description: desc.replace(/<!\[CDATA\[(.*?)\]\]>/g, '$1').replace(/<[^>]+>/g, '').trim()
+              });
+            }
+            return items;
+          }
+
+          function isStablecoinRelated(item) {
+            const text = (item.title + ' ' + item.description).toLowerCase();
+            return STABLECOIN_KEYWORDS.some(kw => text.includes(kw));
+          }
+
           async function searchFederalRegister() {
             const baseUrl = 'https://www.federalregister.gov/api/v1/documents.json';
             const allDocs = [];
-
             for (const term of SEARCH_TERMS) {
               const url = `${baseUrl}?conditions[term]=${encodeURIComponent(term)}&per_page=20&order=newest`;
               try {
-                const response = await fetch(url);
+                const raw = await fetch(url);
+                const response = JSON.parse(raw);
                 if (response.results) {
-                  allDocs.push(...response.results);
+                  allDocs.push(...response.results.map(d => ({
+                    id: d.document_number,
+                    title: d.title,
+                    type: d.type || 'Document',
+                    agency: d.agencies?.[0]?.name || 'Unknown',
+                    publication_date: d.publication_date,
+                    url: d.html_url || '',
+                    source: 'Federal Register'
+                  })));
                 }
               } catch (e) {
-                console.error(`Error searching for ${term}:`, e.message);
+                console.error(`Error searching FR for ${term}:`, e.message);
               }
             }
+            return allDocs;
+          }
 
-            const unique = {};
-            for (const doc of allDocs) {
-              if (doc.document_number) {
-                unique[doc.document_number] = doc;
+          async function searchAgencyFeeds() {
+            const allDocs = [];
+            for (const feed of AGENCY_FEEDS) {
+              try {
+                const raw = await fetch(feed.url);
+                const items = parseXMLItems(raw);
+                const relevant = items.filter(isStablecoinRelated);
+                for (const item of relevant) {
+                  allDocs.push({
+                    id: item.link || item.title,
+                    title: item.title,
+                    type: 'Agency Announcement',
+                    agency: feed.agency,
+                    publication_date: item.pubDate ? new Date(item.pubDate).toISOString().split('T')[0] : 'Unknown',
+                    url: item.link,
+                    source: feed.name
+                  });
+                }
+              } catch (e) {
+                console.error(`Error checking ${feed.name}:`, e.message);
               }
             }
-            return Object.values(unique);
+            return allDocs;
           }
 
           async function main() {
             let seenData = { seenDocuments: [] };
             try {
               seenData = JSON.parse(fs.readFileSync(SEEN_FILE, 'utf8'));
-              if (!seenData.seenDocuments) {
-                seenData.seenDocuments = [];
-              }
+              if (!seenData.seenDocuments) seenData.seenDocuments = [];
             } catch (e) {
               console.log('No seen-documents.json found, creating new one');
             }
 
-            const seenNumbers = new Set(seenData.seenDocuments.map(d => d.document_number));
+            const seenIds = new Set(seenData.seenDocuments.map(d => d.document_number || d.id));
 
-            const docs = await searchFederalRegister();
-            console.log(`Found ${docs.length} total documents`);
+            // Check both sources
+            const [frDocs, agencyDocs] = await Promise.all([
+              searchFederalRegister(),
+              searchAgencyFeeds()
+            ]);
 
-            const newDocs = docs.filter(d => !seenNumbers.has(d.document_number));
+            const allDocs = [...frDocs, ...agencyDocs];
+            // Deduplicate
+            const unique = {};
+            for (const doc of allDocs) {
+              if (doc.id && !unique[doc.id]) unique[doc.id] = doc;
+            }
+            const docs = Object.values(unique);
+            console.log(`Found ${frDocs.length} Federal Register + ${agencyDocs.length} agency docs (${docs.length} unique)`);
+
+            const newDocs = docs.filter(d => !seenIds.has(d.id));
             console.log(`Found ${newDocs.length} new documents`);
 
             if (newDocs.length > 0) {
               const today = new Date().toISOString().split('T')[0];
               for (const doc of newDocs) {
                 seenData.seenDocuments.push({
-                  document_number: doc.document_number,
+                  document_number
+cd /Users/madison/Desktop/genius
+cat > .github/workflows/federal-register-monitor.yml << 'ENDOFFILE'
+name: Federal Register Monitor
+
+on:
+  schedule:
+    - cron: '15 * * * *'
+  workflow_dispatch:
+
+jobs:
+  check-federal-register:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check Federal Register and agency websites
+        run: |
+          cat << 'EOF' > check-federal-register.js
+          const fs = require('fs');
+          const https = require('https');
+
+          const SEARCH_TERMS = ['GENIUS Act', 'stablecoin', 'payment stablecoin'];
+          const SEEN_FILE = 'seen-documents.json';
+
+          // Agency newsroom RSS/JSON feeds to monitor
+          const AGENCY_FEEDS = [
+            {
+              name: 'OCC News Releases',
+              url: 'https://www.occ.gov/static/news-issuances/ews/occ-news-releases.xml',
+              type: 'xml',
+              agency: 'OCC'
+            },
+            {
+              name: 'OCC Bulletins',
+              url: 'https://www.occ.gov/static/news-issuances/ews/occ-bulletins.xml',
+              type: 'xml',
+              agency: 'OCC'
+            },
+            {
+              name: 'FDIC Press Releases',
+              url: 'https://www.fdic.gov/news/press-releases/index.xml',
+              type: 'xml',
+              agency: 'FDIC'
+            },
+            {
+              name: 'Federal Reserve Press Releases',
+              url: 'https://www.federalreserve.gov/feeds/press_all.xml',
+              type: 'xml',
+              agency: 'Federal Reserve'
+            },
+            {
+              name: 'NCUA News',
+              url: 'https://ncua.gov/newsroom/press-release/rss.xml',
+              type: 'xml',
+              agency: 'NCUA'
+            }
+          ];
+
+          const STABLECOIN_KEYWORDS = [
+            'genius act', 'stablecoin', 'payment stablecoin',
+            'digital asset', 'crypto', 'stable coin'
+          ];
+
+          function fetch(url) {
+            return new Promise((resolve, reject) => {
+              const client = url.startsWith('https') ? https : require('http');
+              client.get(url, { headers: { 'User-Agent': 'GENIUS-Act-Tracker/1.0' } }, (res) => {
+                if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+                  return fetch(res.headers.location).then(resolve).catch(reject);
+                }
+                let data = '';
+                res.on('data', chunk => data += chunk);
+                res.on('end', () => resolve(data));
+                res.on('error', reject);
+              }).on('error', reject);
+            });
+          }
+
+          function parseXMLItems(xml) {
+            const items = [];
+            const itemRegex = /<item>([\s\S]*?)<\/item>/gi;
+            let match;
+            while ((match = itemRegex.exec(xml)) !== null) {
+              const itemXml = match[1];
+              const title = (itemXml.match(/<title[^>]*>([\s\S]*?)<\/title>/) || [])[1] || '';
+              const link = (itemXml.match(/<link[^>]*>([\s\S]*?)<\/link>/) || [])[1] || '';
+              const pubDate = (itemXml.match(/<pubDate>([\s\S]*?)<\/pubDate>/) || [])[1] || '';
+              const desc = (itemXml.match(/<description>([\s\S]*?)<\/description>/) || [])[1] || '';
+              items.push({
+                title: title.replace(/<!\[CDATA\[(.*?)\]\]>/g, '$1').trim(),
+                link: link.replace(/<!\[CDATA\[(.*?)\]\]>/g, '$1').trim(),
+                pubDate: pubDate.trim(),
+                description: desc.replace(/<!\[CDATA\[(.*?)\]\]>/g, '$1').replace(/<[^>]+>/g, '').trim()
+              });
+            }
+            return items;
+          }
+
+          function isStablecoinRelated(item) {
+            const text = (item.title + ' ' + item.description).toLowerCase();
+            return STABLECOIN_KEYWORDS.some(kw => text.includes(kw));
+          }
+
+          async function searchFederalRegister() {
+            const baseUrl = 'https://www.federalregister.gov/api/v1/documents.json';
+            const allDocs = [];
+            for (const term of SEARCH_TERMS) {
+              const url = `${baseUrl}?conditions[term]=${encodeURIComponent(term)}&per_page=20&order=newest`;
+              try {
+                const raw = await fetch(url);
+                const response = JSON.parse(raw);
+                if (response.results) {
+                  allDocs.push(...response.results.map(d => ({
+                    id: d.document_number,
+                    title: d.title,
+                    type: d.type || 'Document',
+                    agency: d.agencies?.[0]?.name || 'Unknown',
+                    publication_date: d.publication_date,
+                    url: d.html_url || '',
+                    source: 'Federal Register'
+                  })));
+                }
+              } catch (e) {
+                console.error(`Error searching FR for ${term}:`, e.message);
+              }
+            }
+            return allDocs;
+          }
+
+          async function searchAgencyFeeds() {
+            const allDocs = [];
+            for (const feed of AGENCY_FEEDS) {
+              try {
+                const raw = await fetch(feed.url);
+                const items = parseXMLItems(raw);
+                const relevant = items.filter(isStablecoinRelated);
+                for (const item of relevant) {
+                  allDocs.push({
+                    id: item.link || item.title,
+                    title: item.title,
+                    type: 'Agency Announcement',
+                    agency: feed.agency,
+                    publication_date: item.pubDate ? new Date(item.pubDate).toISOString().split('T')[0] : 'Unknown',
+                    url: item.link,
+                    source: feed.name
+                  });
+                }
+              } catch (e) {
+                console.error(`Error checking ${feed.name}:`, e.message);
+              }
+            }
+            return allDocs;
+          }
+
+          async function main() {
+            let seenData = { seenDocuments: [] };
+            try {
+              seenData = JSON.parse(fs.readFileSync(SEEN_FILE, 'utf8'));
+              if (!seenData.seenDocuments) seenData.seenDocuments = [];
+            } catch (e) {
+              console.log('No seen-documents.json found, creating new one');
+            }
+
+            const seenIds = new Set(seenData.seenDocuments.map(d => d.document_number || d.id));
+
+            // Check both sources
+            const [frDocs, agencyDocs] = await Promise.all([
+              searchFederalRegister(),
+              searchAgencyFeeds()
+            ]);
+
+            const allDocs = [...frDocs, ...agencyDocs];
+            // Deduplicate
+            const unique = {};
+            for (const doc of allDocs) {
+              if (doc.id && !unique[doc.id]) unique[doc.id] = doc;
+            }
+            const docs = Object.values(unique);
+            console.log(`Found ${frDocs.length} Federal Register + ${agencyDocs.length} agency docs (${docs.length} unique)`);
+
+            const newDocs = docs.filter(d => !seenIds.has(d.id));
+            console.log(`Found ${newDocs.length} new documents`);
+
+            if (newDocs.length > 0) {
+              const today = new Date().toISOString().split('T')[0];
+              for (const doc of newDocs) {
+                seenData.seenDocuments.push({
+                  document_number: doc.id,
                   title: doc.title,
                   type: doc.type,
-                  agency: doc.agencies?.[0]?.name || 'Unknown',
+                  agency: doc.agency,
                   publication_date: doc.publication_date,
+                  url: doc.url,
+                  source: doc.source,
                   first_seen: today
                 });
               }
@@ -114,8 +409,11 @@ jobs:
               fs.writeFileSync('index.html', html);
 
               console.log('New documents found:');
-              newDocs.forEach(d => console.log(`- ${d.title}`));
+              newDocs.forEach(d => console.log(`- [${d.source}] ${d.title} (${d.agency})`));
               fs.writeFileSync('has-updates.txt', 'true');
+
+              // Save new docs info for Slack notification
+              fs.writeFileSync('new-docs.json', JSON.stringify(newDocs, null, 2));
             } else {
               console.log('No new documents found');
             }
@@ -143,7 +441,7 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add seen-documents.json index.html
-          git commit -m "Auto-update: New Federal Register documents"
+          git commit -m "Auto-update: New Federal Register/agency documents"
           git push
 
       - name: Notify via Slack
@@ -152,12 +450,11 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
           MESSAGE=$(node -e "
-            const data = require('./seen-documents.json');
-            const docs = data.seenDocuments.slice(-5).reverse();
+            const docs = JSON.parse(require('fs').readFileSync('new-docs.json', 'utf8'));
             let text = '🔔 *New GENIUS Act documents found:*\n\n';
             docs.forEach(d => {
-              text += '*' + d.title + '*\n';
-              text += '• Type: ' + d.type + '\n';
+              text += '📄 *' + d.title + '*\n';
+              text += '• Source: ' + d.source + '\n';
               text += '• Agency: ' + d.agency + '\n';
               text += '• Published: ' + d.publication_date + '\n';
               if (d.url) text += '• <' + d.url + '|View document>\n';
@@ -166,3 +463,277 @@ jobs:
             console.log(JSON.stringify({text}));
           ")
           curl -X POST -H 'Content-type: application/json' --data "$MESSAGE" $SLACK_WEBHOOK_URL
+          rm -f new-docs.json
+ENDOFFILEcd /Users/madison/Desktop/genius
+cat > .github/workflows/federal-register-monitor.yml << 'ENDOFFILE'
+name: Federal Register Monitor
+
+on:
+  schedule:
+    - cron: '15 * * * *'
+  workflow_dispatch:
+
+jobs:
+  check-federal-register:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check Federal Register and agency websites
+        run: |
+          cat << 'EOF' > check-federal-register.js
+          const fs = require('fs');
+          const https = require('https');
+
+          const SEARCH_TERMS = ['GENIUS Act', 'stablecoin', 'payment stablecoin'];
+          const SEEN_FILE = 'seen-documents.json';
+
+          // Agency newsroom RSS/JSON feeds to monitor
+          const AGENCY_FEEDS = [
+            {
+              name: 'OCC News Releases',
+              url: 'https://www.occ.gov/static/news-issuances/ews/occ-news-releases.xml',
+              type: 'xml',
+              agency: 'OCC'
+            },
+            {
+              name: 'OCC Bulletins',
+              url: 'https://www.occ.gov/static/news-issuances/ews/occ-bulletins.xml',
+              type: 'xml',
+              agency: 'OCC'
+            },
+            {
+              name: 'FDIC Press Releases',
+              url: 'https://www.fdic.gov/news/press-releases/index.xml',
+              type: 'xml',
+              agency: 'FDIC'
+            },
+            {
+              name: 'Federal Reserve Press Releases',
+              url: 'https://www.federalreserve.gov/feeds/press_all.xml',
+              type: 'xml',
+              agency: 'Federal Reserve'
+            },
+            {
+              name: 'NCUA News',
+              url: 'https://ncua.gov/newsroom/press-release/rss.xml',
+              type: 'xml',
+              agency: 'NCUA'
+            }
+          ];
+
+          const STABLECOIN_KEYWORDS = [
+            'genius act', 'stablecoin', 'payment stablecoin',
+            'digital asset', 'crypto', 'stable coin'
+          ];
+
+          function fetch(url) {
+            return new Promise((resolve, reject) => {
+              const client = url.startsWith('https') ? https : require('http');
+              client.get(url, { headers: { 'User-Agent': 'GENIUS-Act-Tracker/1.0' } }, (res) => {
+                if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+                  return fetch(res.headers.location).then(resolve).catch(reject);
+                }
+                let data = '';
+                res.on('data', chunk => data += chunk);
+                res.on('end', () => resolve(data));
+                res.on('error', reject);
+              }).on('error', reject);
+            });
+          }
+
+          function parseXMLItems(xml) {
+            const items = [];
+            const itemRegex = /<item>([\s\S]*?)<\/item>/gi;
+            let match;
+            while ((match = itemRegex.exec(xml)) !== null) {
+              const itemXml = match[1];
+              const title = (itemXml.match(/<title[^>]*>([\s\S]*?)<\/title>/) || [])[1] || '';
+              const link = (itemXml.match(/<link[^>]*>([\s\S]*?)<\/link>/) || [])[1] || '';
+              const pubDate = (itemXml.match(/<pubDate>([\s\S]*?)<\/pubDate>/) || [])[1] || '';
+              const desc = (itemXml.match(/<description>([\s\S]*?)<\/description>/) || [])[1] || '';
+              items.push({
+                title: title.replace(/<!\[CDATA\[(.*?)\]\]>/g, '$1').trim(),
+                link: link.replace(/<!\[CDATA\[(.*?)\]\]>/g, '$1').trim(),
+                pubDate: pubDate.trim(),
+                description: desc.replace(/<!\[CDATA\[(.*?)\]\]>/g, '$1').replace(/<[^>]+>/g, '').trim()
+              });
+            }
+            return items;
+          }
+
+          function isStablecoinRelated(item) {
+            const text = (item.title + ' ' + item.description).toLowerCase();
+            return STABLECOIN_KEYWORDS.some(kw => text.includes(kw));
+          }
+
+          async function searchFederalRegister() {
+            const baseUrl = 'https://www.federalregister.gov/api/v1/documents.json';
+            const allDocs = [];
+            for (const term of SEARCH_TERMS) {
+              const url = `${baseUrl}?conditions[term]=${encodeURIComponent(term)}&per_page=20&order=newest`;
+              try {
+                const raw = await fetch(url);
+                const response = JSON.parse(raw);
+                if (response.results) {
+                  allDocs.push(...response.results.map(d => ({
+                    id: d.document_number,
+                    title: d.title,
+                    type: d.type || 'Document',
+                    agency: d.agencies?.[0]?.name || 'Unknown',
+                    publication_date: d.publication_date,
+                    url: d.html_url || '',
+                    source: 'Federal Register'
+                  })));
+                }
+              } catch (e) {
+                console.error(`Error searching FR for ${term}:`, e.message);
+              }
+            }
+            return allDocs;
+          }
+
+          async function searchAgencyFeeds() {
+            const allDocs = [];
+            for (const feed of AGENCY_FEEDS) {
+              try {
+                const raw = await fetch(feed.url);
+                const items = parseXMLItems(raw);
+                const relevant = items.filter(isStablecoinRelated);
+                for (const item of relevant) {
+                  allDocs.push({
+                    id: item.link || item.title,
+                    title: item.title,
+                    type: 'Agency Announcement',
+                    agency: feed.agency,
+                    publication_date: item.pubDate ? new Date(item.pubDate).toISOString().split('T')[0] : 'Unknown',
+                    url: item.link,
+                    source: feed.name
+                  });
+                }
+              } catch (e) {
+                console.error(`Error checking ${feed.name}:`, e.message);
+              }
+            }
+            return allDocs;
+          }
+
+          async function main() {
+            let seenData = { seenDocuments: [] };
+            try {
+              seenData = JSON.parse(fs.readFileSync(SEEN_FILE, 'utf8'));
+              if (!seenData.seenDocuments) seenData.seenDocuments = [];
+            } catch (e) {
+              console.log('No seen-documents.json found, creating new one');
+            }
+
+            const seenIds = new Set(seenData.seenDocuments.map(d => d.document_number || d.id));
+
+            // Check both sources
+            const [frDocs, agencyDocs] = await Promise.all([
+              searchFederalRegister(),
+              searchAgencyFeeds()
+            ]);
+
+            const allDocs = [...frDocs, ...agencyDocs];
+            // Deduplicate
+            const unique = {};
+            for (const doc of allDocs) {
+              if (doc.id && !unique[doc.id]) unique[doc.id] = doc;
+            }
+            const docs = Object.values(unique);
+            console.log(`Found ${frDocs.length} Federal Register + ${agencyDocs.length} agency docs (${docs.length} unique)`);
+
+            const newDocs = docs.filter(d => !seenIds.has(d.id));
+            console.log(`Found ${newDocs.length} new documents`);
+
+            if (newDocs.length > 0) {
+              const today = new Date().toISOString().split('T')[0];
+              for (const doc of newDocs) {
+                seenData.seenDocuments.push({
+                  document_number: doc.id,
+                  title: doc.title,
+                  type: doc.type,
+                  agency: doc.agency,
+                  publication_date: doc.publication_date,
+                  url: doc.url,
+                  source: doc.source,
+                  first_seen: today
+                });
+              }
+              seenData.lastChecked = new Date().toISOString();
+              fs.writeFileSync(SEEN_FILE, JSON.stringify(seenData, null, 2));
+
+              let html = fs.readFileSync('index.html', 'utf8');
+              const todayFormatted = new Date().toLocaleDateString('en-US', {
+                year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/New_York'
+              });
+              html = html.replace(
+                /<span id="lastUpdated">.*?<\/span>/,
+                `<span id="lastUpdated">${todayFormatted}</span>`
+              );
+              fs.writeFileSync('index.html', html);
+
+              console.log('New documents found:');
+              newDocs.forEach(d => console.log(`- [${d.source}] ${d.title} (${d.agency})`));
+              fs.writeFileSync('has-updates.txt', 'true');
+
+              // Save new docs info for Slack notification
+              fs.writeFileSync('new-docs.json', JSON.stringify(newDocs, null, 2));
+            } else {
+              console.log('No new documents found');
+            }
+          }
+
+          main().catch(e => { console.error('Error:', e); process.exit(1); });
+          EOF
+
+          node check-federal-register.js
+          rm check-federal-register.js
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -f has-updates.txt ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            rm has-updates.txt
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push updates
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add seen-documents.json index.html
+          git commit -m "Auto-update: New Federal Register/agency documents"
+          git push
+
+      - name: Notify via Slack
+        if: steps.changes.outputs.has_changes == 'true' && env.SLACK_WEBHOOK_URL != ''
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          MESSAGE=$(node -e "
+            const docs = JSON.parse(require('fs').readFileSync('new-docs.json', 'utf8'));
+            let text = '🔔 *New GENIUS Act documents found:*\n\n';
+            docs.forEach(d => {
+              text += '📄 *' + d.title + '*\n';
+              text += '• Source: ' + d.source + '\n';
+              text += '• Agency: ' + d.agency + '\n';
+              text += '• Published: ' + d.publication_date + '\n';
+              if (d.url) text += '• <' + d.url + '|View document>\n';
+              text += '\n';
+            });
+            console.log(JSON.stringify({text}));
+          ")
+          curl -X POST -H 'Content-type: application/json' --data "$MESSAGE" $SLACK_WEBHOOK_URL
+          rm -f new-docs.json
