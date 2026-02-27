@@ -240,7 +240,7 @@ const rulemakingsData = [
                 "title": "Approval Requirements for Issuance of Payment Stablecoins"
             },
             "commentPeriod": {
-                "status": "pending-publication",
+                "status": "open",
                 "extended": true,
                 "startDate": "2025-12-19",
                 "endDate": "2026-05-18",
@@ -340,7 +340,7 @@ const rulemakingsData = [
                 "title": "Investments in and Licensing of Permitted Payment Stablecoins Issuers"
             },
             "commentPeriod": {
-                "status": "pending-publication",
+                "status": "open",
                 "startDate": "2026-02-12",
                 "endDate": "2026-04-13"
             },
