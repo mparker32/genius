@@ -151,6 +151,18 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
-          curl -X POST -H 'Content-type: application/json' \
-            --data '{"text":"🔔 GENIUS Act Tracker updated with new Federal Register documents!"}' \
-            $SLACK_WEBHOOK_URL
+          MESSAGE=$(node -e "
+            const data = require('./seen-documents.json');
+            const docs = data.seenDocuments.slice(-5).reverse();
+            let text = '🔔 *New GENIUS Act documents found:*\n\n';
+            docs.forEach(d => {
+              text += '*' + d.title + '*\n';
+              text += '• Type: ' + d.type + '\n';
+              text += '• Agency: ' + d.agency + '\n';
+              text += '• Published: ' + d.publication_date + '\n';
+              if (d.url) text += '• <' + d.url + '|View document>\n';
+              text += '\n';
+            });
+            console.log(JSON.stringify({text}));
+          ")
+          curl -X POST -H 'Content-type: application/json' --data "$MESSAGE" $SLACK_WEBHOOK_URL
