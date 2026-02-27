@@ -132,9 +132,33 @@ const rulemakingsData = [
         "agency": "Comptroller of the Currency (in coordination with other relevant regulators)",
         "deadline": "Consistent with Section 13 (1 year after enactment)",
         "implementation": "18 months after enactment OR 120 days after final regs issued (whichever is earlier)",
-        "notes": "Conforming amendment to 12 USC 1(b)",
+        "notes": "Conforming amendment to 12 USC 1(b). OCC issued comprehensive NPRM on Feb 25, 2026 (new 12 CFR 15).",
         "deadlineDate": "2026-07-18",
         "rulemakingType": "required",
+        "commentDeadline": "2026-04-27",
+        "commentUrl": "https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-9.html",
+        "rulemakingStages": {
+        "anprm": {
+                "status": "skipped"
+        },
+        "nprm": {
+                "status": "published",
+                "date": "2026-02-25",
+                "title": "GENIUS Act Regulations: Notice of Proposed Rulemaking"
+        },
+        "commentPeriod": {
+                "status": "open",
+                "startDate": "2026-02-25",
+                "endDate": "2026-04-27",
+                "notes": "60 days from Federal Register publication"
+        },
+        "finalRule": {
+                "status": "not-started"
+        },
+        "effective": {
+                "status": "not-started"
+        }
+},
         "paradigmCommentary": "",
         "paradigmAttitude": ""
     },
@@ -360,9 +384,33 @@ const rulemakingsData = [
         "agency": "Comptroller",
         "deadline": "Consistent with Section 13 (1 year after enactment)",
         "implementation": "18 months after enactment OR 120 days after final regs issued (whichever is earlier)",
-        "notes": "For enforcement against State qualified nonbank issuers",
+        "notes": "For enforcement against State qualified nonbank issuers. Addressed in OCC comprehensive NPRM (Feb 25, 2026).",
         "deadlineDate": "2026-07-18",
         "rulemakingType": "required",
+        "commentDeadline": "2026-04-27",
+        "commentUrl": "https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-9.html",
+        "rulemakingStages": {
+        "anprm": {
+                "status": "skipped"
+        },
+        "nprm": {
+                "status": "published",
+                "date": "2026-02-25",
+                "title": "GENIUS Act Regulations: Notice of Proposed Rulemaking"
+        },
+        "commentPeriod": {
+                "status": "open",
+                "startDate": "2026-02-25",
+                "endDate": "2026-04-27",
+                "notes": "60 days from Federal Register publication"
+        },
+        "finalRule": {
+                "status": "not-started"
+        },
+        "effective": {
+                "status": "not-started"
+        }
+},
         "paradigmCommentary": "",
         "paradigmAttitude": ""
     },
