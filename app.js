@@ -436,6 +436,10 @@ function renderRulemakingStages(item) {
                 statusText = 'In Effect';
                 dateText = stage.date ? formatDate(stage.date) : '';
             }
+        } else if (status === 'pending-publication') {
+            stepClass = 'step-waiting';
+            statusText = 'Awaiting FR Publication';
+            dateText = stage.notes || '';
         } else if (index === currentStageIndex && status === 'not-started') {
             // This is the next stage after a completed one - show as "pending/waiting"
             stepClass = 'step-waiting';
@@ -548,11 +552,14 @@ function renderCommentSection(item) {
 
     // If we have a direct comment URL (e.g., Federal Register page)
     if (item.commentUrl) {
+        const isPendingPublication = item.rulemakingStages?.commentPeriod?.status === 'pending-publication';
         const commentStatus = rulemakingStatus.isOpenForComment
             ? '<span class="comment-status open">Currently accepting comments</span>'
-            : rulemakingStatus.commentsCloseDate
-                ? '<span class="comment-status closed">Comment period closed</span>'
-                : '';
+            : isPendingPublication
+                ? '<span class="comment-status pending">Awaiting Federal Register publication \u2014 comment period opens upon publication</span>'
+                : rulemakingStatus.commentsCloseDate
+                    ? '<span class="comment-status closed">Comment period closed</span>'
+                    : '';
 
         // Check if there are submitted comments to display
         const submittedCommentsHtml = item.submittedComments && item.submittedComments.length > 0

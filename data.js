@@ -132,10 +132,10 @@ const rulemakingsData = [
         "agency": "Comptroller of the Currency (in coordination with other relevant regulators)",
         "deadline": "Consistent with Section 13 (1 year after enactment)",
         "implementation": "18 months after enactment OR 120 days after final regs issued (whichever is earlier)",
-        "notes": "Conforming amendment to 12 USC 1(b). OCC issued comprehensive NPRM on Feb 25, 2026 (new 12 CFR 15).",
+        "notes": "Conforming amendment to 12 USC 1(b). OCC issued comprehensive NPRM on Feb 25, 2026 (new 12 CFR 15). Awaiting Federal Register publication to open formal comment period. Awaiting Federal Register publication to open formal comment period.",
         "deadlineDate": "2026-07-18",
         "rulemakingType": "required",
-        "commentDeadline": "2026-04-27",
+        "commentDeadline": null,
         "commentUrl": "https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-9.html",
         "rulemakingStages": {
         "anprm": {
@@ -147,10 +147,10 @@ const rulemakingsData = [
                 "title": "GENIUS Act Regulations: Notice of Proposed Rulemaking"
         },
         "commentPeriod": {
-                "status": "open",
-                "startDate": "2026-02-25",
-                "endDate": "2026-04-27",
-                "notes": "60 days from Federal Register publication"
+                "status": "pending-publication",
+                "startDate": null,
+                "endDate": null,
+                "notes": "NPRM published on OCC website Feb 25, 2026. Comment period begins once published in the Federal Register (60-day comment period)."
         },
         "finalRule": {
                 "status": "not-started"
@@ -240,7 +240,7 @@ const rulemakingsData = [
                 "title": "Approval Requirements for Issuance of Payment Stablecoins"
             },
             "commentPeriod": {
-                "status": "open",
+                "status": "pending-publication",
                 "extended": true,
                 "startDate": "2025-12-19",
                 "endDate": "2026-05-18",
@@ -340,7 +340,7 @@ const rulemakingsData = [
                 "title": "Investments in and Licensing of Permitted Payment Stablecoins Issuers"
             },
             "commentPeriod": {
-                "status": "open",
+                "status": "pending-publication",
                 "startDate": "2026-02-12",
                 "endDate": "2026-04-13"
             },

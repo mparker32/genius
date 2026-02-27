@@ -1707,6 +1707,12 @@ select option {
     background: var(--gray-light);
     color: var(--gray-text);
     border: 1px solid var(--gray-border);
+
+.comment-status.pending {
+    background: #fff8e6;
+    color: #996600;
+    border: 1px solid #e6c200;
+}
 }
 
 .comment-status-standalone {
