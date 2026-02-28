@@ -1,5 +1,5 @@
 {
-  "lastChecked": "2026-02-26T10:32:09.949Z",
+  "lastChecked": "2026-02-28T09:51:36.969Z",
   "seenDocuments": [
     {
       "document_number": "2025-23510",
@@ -334,6 +334,26 @@
       "agency": "Federal Reserve System",
       "publication_date": "2026-02-26",
       "first_seen": "2026-02-26"
+    },
+    {
+      "document_number": "2026-04089",
+      "title": "Implementing the Guiding and Establishing National Innovation for U.S. Stablecoins Act for the Issuance of Stablecoins by Entities Subject to the Jurisdiction of the Office of the Comptroller of the Currency",
+      "type": "Proposed Rule",
+      "agency": "Treasury Department",
+      "publication_date": "2026-03-02",
+      "url": "https://www.federalregister.gov/documents/2026/03/02/2026-04089/implementing-the-guiding-and-establishing-national-innovation-for-us-stablecoins-act-for-the",
+      "source": "Federal Register",
+      "first_seen": "2026-02-28"
+    },
+    {
+      "document_number": "2026-04002",
+      "title": "Hardwood and Decorative Plywood From the Socialist Republic of Vietnam: Preliminary Affirmative Determination of Sales at Less Than Fair Value, Preliminary Negative Determination of Critical Circumstances, and Postponement of Final Determination and Extension of Provisional Measures",
+      "type": "Notice",
+      "agency": "Commerce Department",
+      "publication_date": "2026-03-02",
+      "url": "https://www.federalregister.gov/documents/2026/03/02/2026-04002/hardwood-and-decorative-plywood-from-the-socialist-republic-of-vietnam-preliminary-affirmative",
+      "source": "Federal Register",
+      "first_seen": "2026-02-28"
     }
   ],
   "searchTerms": [
