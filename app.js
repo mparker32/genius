@@ -536,6 +536,10 @@ function renderCommentSection(item) {
                 ? '<span class="comment-status closed">Comment period closed</span>'
                 : '';
 
+        const submittedCommentsHtml = item.submittedComments && item.submittedComments.length > 0
+            ? renderSubmittedComments(item.submittedComments, item.commentsPageUrl || docketUrl)
+            : '';
+
         return `
             <div class="public-comments-section">
                 <h3>💬 Public Comments</h3>
@@ -546,6 +550,7 @@ function renderCommentSection(item) {
                         View Comments on Regulations.gov →
                     </a>
                 </div>
+                ${submittedCommentsHtml}
             </div>
         `;
     }

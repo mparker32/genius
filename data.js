@@ -331,6 +331,8 @@ const rulemakingsData = [
         "deadlineDate": "2026-07-18",
         "commentUrl": "https://www.federalregister.gov/public-inspection/2026-02868/investments-in-and-licensing-of-permitted-payment-stablecoins-issuers",
         "commentDeadline": "2026-04-13",
+        "docketId": "NCUA-2025-1335",
+        "commentsPageUrl": "https://www.regulations.gov/docket/NCUA-2025-1335",
         "rulemakingStages": {
             "anprm": { "status": "skipped" },
             "nprm": {
@@ -352,7 +354,17 @@ const rulemakingsData = [
         "priorityReason": "Currently open for comment (deadline April 13, 2026). Opportunity to shape credit union stablecoin issuance framework.",
         "paradigmRecommendation": "participate",
         "paradigmCommentary": "",
-        "paradigmAttitude": ""
+        "paradigmAttitude": "",
+        "submittedComments": [
+            {
+                "commenter": "Michael Ravnitzky",
+                "type": "Individual",
+                "date": "2026-02-12",
+                "commentId": "NCUA-2025-1335-0002",
+                "url": "https://www.regulations.gov/comment/NCUA-2025-1335-0002",
+                "summary": "Submitted detailed comments on the proposed rule for credit union stablecoin issuance. (5 comments received by NCUA; 1 publicly posted as of March 6, 2026.)"
+            }
+        ]
     },
     {
         "section": "5(g)",
