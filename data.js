@@ -132,10 +132,10 @@ const rulemakingsData = [
         "agency": "Comptroller of the Currency (in coordination with other relevant regulators)",
         "deadline": "Consistent with Section 13 (1 year after enactment)",
         "implementation": "18 months after enactment OR 120 days after final regs issued (whichever is earlier)",
-        "notes": "Conforming amendment to 12 USC 1(b). OCC issued comprehensive NPRM on Feb 25, 2026 (new 12 CFR 15). Awaiting Federal Register publication to open formal comment period. Awaiting Federal Register publication to open formal comment period.",
+        "notes": "Conforming amendment to 12 USC 1(b). OCC issued comprehensive NPRM on Feb 25, 2026 (new 12 CFR 15). Published in Federal Register; comments due May 1, 2026.",
         "deadlineDate": "2026-07-18",
         "rulemakingType": "required",
-        "commentDeadline": null,
+        "commentDeadline": "2026-05-01",
         "commentUrl": "https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-9.html",
         "rulemakingStages": {
         "anprm": {
@@ -147,10 +147,10 @@ const rulemakingsData = [
                 "title": "GENIUS Act Regulations: Notice of Proposed Rulemaking"
         },
         "commentPeriod": {
-                "status": "pending-publication",
-                "startDate": null,
-                "endDate": null,
-                "notes": "NPRM published on OCC website Feb 25, 2026. Comment period begins once published in the Federal Register (60-day comment period)."
+                "status": "open",
+                "startDate": "2026-03-03",
+                "endDate": "2026-05-01",
+                "notes": "60-day comment period. Published in Federal Register."
         },
         "finalRule": {
                 "status": "not-started"
