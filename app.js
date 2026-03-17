@@ -317,6 +317,9 @@ function renderSubmittedComments(comments, commentsPageUrl) {
             year: 'numeric'
         });
 
+        const commentLink = comment.pdfUrl || comment.url;
+        const linkLabel = comment.pdfUrl ? 'Read full comment (PDF) →' : 'View comment on Regulations.gov →';
+
         return `
             <div class="submitted-comment">
                 <div class="comment-header">
@@ -325,15 +328,18 @@ function renderSubmittedComments(comments, commentsPageUrl) {
                     <span class="comment-date">${dateFormatted}</span>
                 </div>
                 <p class="comment-summary">${comment.summary}</p>
-                <a href="${comment.pdfUrl}" target="_blank" class="comment-pdf-link" onclick="event.stopPropagation();">
-                    Read full comment (PDF) →
+                <a href="${commentLink}" target="_blank" class="comment-pdf-link" onclick="event.stopPropagation();">
+                    ${linkLabel}
                 </a>
             </div>
         `;
     }).join('');
 
+    const viewAllLabel = commentsPageUrl && commentsPageUrl.includes('fdic.gov')
+        ? 'View all comments on FDIC.gov →'
+        : 'View all comments on Regulations.gov →';
     const viewAllLink = commentsPageUrl
-        ? `<a href="${commentsPageUrl}" target="_blank" class="view-all-comments-link" onclick="event.stopPropagation();">View all comments on FDIC.gov →</a>`
+        ? `<a href="${commentsPageUrl}" target="_blank" class="view-all-comments-link" onclick="event.stopPropagation();">${viewAllLabel}</a>`
         : '';
 
     return `
