@@ -1,0 +1,18 @@
+{
+  "seenCommentIds": [],
+  "lastChecked": "2026-03-17T16:24:06.969Z",
+  "commentCounts": {
+    "OCC-2025-0372": {
+      "total": 21,
+      "checkedAt": "2026-03-17T16:24:06.365Z"
+    },
+    "NCUA-2025-1335": {
+      "total": 1,
+      "checkedAt": "2026-03-17T16:24:06.853Z"
+    },
+    "FDIC-RIN-3064-AG20": {
+      "total": 12,
+      "checkedAt": "2026-03-17T16:24:06.969Z"
+    }
+  }
+}
