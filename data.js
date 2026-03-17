@@ -137,6 +137,8 @@ const rulemakingsData = [
         "rulemakingType": "required",
         "commentDeadline": "2026-05-01",
         "commentUrl": "https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-9.html",
+        "docketId": "OCC-2025-0372",
+        "commentsPageUrl": "https://www.regulations.gov/docket/OCC-2025-0372/comments",
         "rulemakingStages": {
         "anprm": {
                 "status": "skipped"
@@ -163,7 +165,30 @@ const rulemakingsData = [
         "priorityReason": "Currently open for comment (deadline May 1, 2026). Comprehensive OCC NPRM establishing new 12 CFR 15 for national bank stablecoin issuance — key opportunity to shape federal framework.",
         "paradigmRecommendation": "participate",
         "paradigmCommentary": "",
-        "paradigmAttitude": ""
+        "paradigmAttitude": "",
+        "submittedComments": [
+            {"commenter":"Michael Ravnitzky","type":"Individual","date":"2026-03-02","commentId":"OCC-2025-0372-0002","url":"https://www.regulations.gov/comment/OCC-2025-0372-0002","summary":"Submitted comments on the OCC's proposed stablecoin issuance framework."},
+            {"commenter":"TRAC Council","type":"Organization","date":"2026-03-09","commentId":"OCC-2025-0372-0005","url":"https://www.regulations.gov/comment/OCC-2025-0372-0005","summary":"Comments from the TRAC Council on the proposed GENIUS Act regulations."},
+            {"commenter":"The Digital Chamber","type":"Industry Association","date":"2026-03-09","commentId":"OCC-2025-0372-0006","url":"https://www.regulations.gov/comment/OCC-2025-0372-0006","summary":"Industry association comments on the OCC's stablecoin regulatory framework."},
+            {"commenter":"Alka Swanson","type":"Individual","date":"2026-03-09","commentId":"OCC-2025-0372-0007","url":"https://www.regulations.gov/comment/OCC-2025-0372-0007","summary":"Individual comments on the proposed stablecoin issuance rules."},
+            {"commenter":"Bernard Montoya","type":"Individual","date":"2026-03-09","commentId":"OCC-2025-0372-0008","url":"https://www.regulations.gov/comment/OCC-2025-0372-0008","summary":"First submission of comments on the proposed rule."},
+            {"commenter":"Bernard Montoya","type":"Individual","date":"2026-03-09","commentId":"OCC-2025-0372-0009","url":"https://www.regulations.gov/comment/OCC-2025-0372-0009","summary":"Second submission of comments on the proposed rule."},
+            {"commenter":"Spencer Zarr","type":"Individual","date":"2026-03-09","commentId":"OCC-2025-0372-0010","url":"https://www.regulations.gov/comment/OCC-2025-0372-0010","summary":"Individual comments on the OCC's proposed GENIUS Act regulations."},
+            {"commenter":"Securities Industry and Financial Markets Association (SIFMA)","type":"Industry Association","date":"2026-03-09","commentId":"OCC-2025-0372-0011","url":"https://www.regulations.gov/comment/OCC-2025-0372-0011","summary":"SIFMA comments on the proposed stablecoin regulatory framework for OCC-supervised entities."},
+            {"commenter":"Tony DiPadova","type":"Individual","date":"2026-03-09","commentId":"OCC-2025-0372-0012","url":"https://www.regulations.gov/comment/OCC-2025-0372-0012","summary":"Individual comments on the proposed stablecoin issuance rules."},
+            {"commenter":"Darren Lyman","type":"Individual","date":"2026-03-10","commentId":"OCC-2025-0372-0013","url":"https://www.regulations.gov/comment/OCC-2025-0372-0013","summary":"First submission of comments on the proposed rule."},
+            {"commenter":"Darren Lyman","type":"Individual","date":"2026-03-10","commentId":"OCC-2025-0372-0014","url":"https://www.regulations.gov/comment/OCC-2025-0372-0014","summary":"Second submission of comments on the proposed rule."},
+            {"commenter":"Yee! Technologies, LLC","type":"Company","date":"2026-03-10","commentId":"OCC-2025-0372-0015","url":"https://www.regulations.gov/comment/OCC-2025-0372-0015","summary":"Company comments on the proposed stablecoin issuance framework."},
+            {"commenter":"ABA, BPI, CBA, and ICBA","type":"Trade Association Coalition","date":"2026-03-10","commentId":"OCC-2025-0372-0016","url":"https://www.regulations.gov/comment/OCC-2025-0372-0016","summary":"Joint letter from ABA, BPI, CBA, and ICBA on the proposed rule."},
+            {"commenter":"EmpowerHour LLC","type":"Company","date":"2026-03-12","commentId":"OCC-2025-0372-0017","url":"https://www.regulations.gov/comment/OCC-2025-0372-0017","summary":"Company comments on the proposed stablecoin regulatory framework."},
+            {"commenter":"Darren Lyman","type":"Individual","date":"2026-03-12","commentId":"OCC-2025-0372-0018","url":"https://www.regulations.gov/comment/OCC-2025-0372-0018","summary":"Third submission of comments on the proposed rule."},
+            {"commenter":"Empty Set LLC","type":"Company","date":"2026-03-12","commentId":"OCC-2025-0372-0019","url":"https://www.regulations.gov/comment/OCC-2025-0372-0019","summary":"Company comments on the proposed stablecoin issuance rules."},
+            {"commenter":"Darren Lyman","type":"Individual","date":"2026-03-12","commentId":"OCC-2025-0372-0020","url":"https://www.regulations.gov/comment/OCC-2025-0372-0020","summary":"Fourth submission of comments on the proposed rule."},
+            {"commenter":"Lori Trimble","type":"Individual","date":"2026-03-13","commentId":"OCC-2025-0372-0021","url":"https://www.regulations.gov/comment/OCC-2025-0372-0021","summary":"Individual comments on the proposed stablecoin issuance rules."},
+            {"commenter":"Dimitri Vulis","type":"Individual","date":"2026-03-16","commentId":"OCC-2025-0372-0022","url":"https://www.regulations.gov/comment/OCC-2025-0372-0022","summary":"Individual comments on the proposed GENIUS Act regulations."},
+            {"commenter":"Thomas Graham","type":"Individual","date":"2026-03-16","commentId":"OCC-2025-0372-0023","url":"https://www.regulations.gov/comment/OCC-2025-0372-0023","summary":"Individual comments on the proposed stablecoin issuance framework."},
+            {"commenter":"Crypto Council for Innovation","type":"Industry Association","date":"2026-03-17","commentId":"OCC-2025-0372-0024","url":"https://www.regulations.gov/comment/OCC-2025-0372-0024","summary":"Industry association comments on the OCC's comprehensive GENIUS Act rulemaking proposal."}
+        ]
     },
     {
         "section": "4(c)(2)",
@@ -321,7 +346,14 @@ const rulemakingsData = [
                 "date": "2026-02-07",
                 "pdfUrl": "https://www.fdic.gov/federal-register-publications/dylan-grieve-rin-3064-ag20.pdf",
                 "summary": "Opposes rule citing concerns about Section 5 integrity vetting, 'Kill Switch' provisions potentially violating 4th Amendment protections, and federal overreach on state sovereignty."
-            }
+            },
+            {"commenter":"Inca Digital","type":"Company","date":"2026-02-18","pdfUrl":"https://www.fdic.gov/federal-register-publications/inca-digital-adam-zarazinski-rin-3064-ag20.pdf","summary":"Comments from blockchain analytics firm on the proposed stablecoin approval framework."},
+            {"commenter":"ISO SAG (Todd Albers and Karla McKenna)","type":"Standards Organization","date":"2026-02-20","pdfUrl":"https://www.fdic.gov/federal-register-publications/iso-sag-todd-albers-and-karla-mckenna-rin-3064-ag20.pdf","summary":"Comments on payment stablecoin standards and interoperability."},
+            {"commenter":"Wall Street Blockchain Alliance (WSBA) & 6 Others","type":"Industry Association Coalition","date":"2026-02-25","pdfUrl":"https://www.fdic.gov/federal-register-publications/wall-street-blockchain-alliance-wsba-jason-brett-and-6-other-representatives-rin-3064-ag20.pdf","summary":"Joint comment from WSBA and six other representatives on the proposed framework."},
+            {"commenter":"International Bancshares Corporation (2nd comment)","type":"Bank","date":"2026-03-05","pdfUrl":"https://www.fdic.gov/federal-register-publications/international-bancshares-corporation-dennis-e-nixon-march-5-2026-rin-3064-ag20.pdf","summary":"Follow-up comment on the proposed stablecoin approval process."},
+            {"commenter":"Auditchain Labs AG (Supplemental)","type":"Company","date":"2026-03-08","pdfUrl":"https://www.fdic.gov/federal-register-publications/supplemental-comment-auditchain-labs-ag-jason-meyers-rin-3064-ag20.pdf","summary":"Supplemental comment on audit and attestation requirements for stablecoin issuers."},
+            {"commenter":"Empty Set LLC","type":"Company","date":"2026-03-10","pdfUrl":"https://www.fdic.gov/federal-register-publications/empty-set-llc-brice-love-rin-3064-ag20.pdf","summary":"Comments on the proposed FDIC stablecoin issuance approval framework."},
+            {"commenter":"Aspen Institute Civic AI Leader (Rohan Sharma)","type":"Think Tank","date":"2026-03-14","pdfUrl":"https://www.fdic.gov/federal-register-publications/aspen-institute-civic-ai-leader-rohan-sharma-rin-3064-ag20.pdf","summary":"Comments on AI and technology governance in stablecoin regulation."}
         ]
     },
     {
