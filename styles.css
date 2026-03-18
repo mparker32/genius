@@ -52,6 +52,11 @@ body {
     color: var(--black);
 }
 
+.paradigm-logo-full {
+    height: 28px;
+    width: auto;
+}
+
 .logo-text {
     font-family: var(--serif);
     font-size: 22px;
