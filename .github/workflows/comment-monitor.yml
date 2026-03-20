@@ -28,6 +28,12 @@ jobs:
           const https = require('https');
 
           // ── Config ──────────────────────────────────────────────
+          const DOCKET_LABELS = {
+            'OCC-2025-0372': 'OCC — Payment Stablecoin Issuance (Section 4(b)(2))',
+            'NCUA-2025-1335': 'NCUA — Credit Union Stablecoin Issuance (Section 5(a)(2))',
+            'RIN-3064-AG20': 'FDIC — Insured Depository Stablecoin Issuance (Section 5(a)(2))'
+          };
+
           const TRACKED_DOCKETS = [
             { docketId: 'OCC-2025-0372', agency: 'OCC', type: 'regulations.gov' },
             { docketId: 'NCUA-2025-1335', agency: 'NCUA', type: 'regulations.gov' }
@@ -251,6 +257,31 @@ jobs:
 
               fs.writeFileSync('comment-summary.txt', summary);
               console.log('\nNew comments:\n' + summary);
+
+              // ── Rich Slack Block Kit message ────────────────────
+              let slackBlocks = [
+                { type: 'header', text: { type: 'plain_text', text: '📬 New GENIUS Act Public Comments', emoji: true } },
+                { type: 'section', text: { type: 'mrkdwn', text: '*' + allNewComments.length + ' new comment(s)* filed on tracked dockets. Update the tracker with summaries when you get a chance.' } },
+                { type: 'divider' }
+              ];
+              const allDocketIds = [...TRACKED_DOCKETS.map(d => d.docketId), 'RIN-3064-AG20'];
+              for (const docketId of allDocketIds) {
+                const dc = allNewComments.filter(c => c.docketId === docketId);
+                if (dc.length === 0) continue;
+                slackBlocks.push({ type: 'section', text: { type: 'mrkdwn', text: '*' + (DOCKET_LABELS[docketId] || docketId) + '*' } });
+                for (const c of dc) {
+                  const link = c.url || c.pdfUrl || '';
+                  const dt = c.postedDate && c.postedDate !== 'Unknown' ? ' • ' + c.postedDate : '';
+                  const lt = link ? ' • <' + link + '|View comment>' : '';
+                  slackBlocks.push({ type: 'section', text: { type: 'mrkdwn', text: '• *' + c.commenter + '*' + dt + lt } });
+                }
+                slackBlocks.push({ type: 'divider' });
+              }
+              slackBlocks.push({ type: 'actions', elements: [
+                { type: 'button', text: { type: 'plain_text', text: '📋 View GitHub Issues', emoji: true }, url: 'https://github.com/mparker32/genius/issues' },
+                { type: 'button', text: { type: 'plain_text', text: '🌐 View Tracker', emoji: true }, url: 'https://mparker32.github.io/genius/' }
+              ]});
+              fs.writeFileSync('slack-payload.json', JSON.stringify({ blocks: slackBlocks }));
             } else {
               console.log('No new comments found.');
             }
@@ -280,6 +311,14 @@ jobs:
           git add seen-comments.json || true
           git diff --cached --quiet || git commit -m "Auto-update: Refresh comment tracking data"
           git push || true
+
+      - name: Send Slack notification
+        if: steps.comments.outputs.has_new_comments == 'true' && env.SLACK_WEBHOOK_URL != ''
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          curl -X POST -H 'Content-type: application/json' -d @slack-payload.json "$SLACK_WEBHOOK_URL" || true
+          rm -f slack-payload.json
 
       - name: Create GitHub Issue for new comments
         if: steps.comments.outputs.has_new_comments == 'true'
@@ -322,16 +361,3 @@ jobs:
             --label "new-comments" || echo "Note: Could not create issue (label may not exist yet)"
 
           rm -f new-comments.json comment-summary.txt
-
-      - name: Send Slack notification
-        if: steps.comments.outputs.has_new_comments == 'true' && env.SLACK_WEBHOOK_URL != ''
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        run: |
-          SUMMARY=$(cat comment-summary.txt 2>/dev/null || echo "New comments detected")
-          PAYLOAD=$(cat <<EOF
-          {"text": "📬 *New GENIUS Act public comments detected:*\n\n\`\`\`$SUMMARY\`\`\`\n\n<https://github.com/${{ github.repository }}/issues|View issues>"}
-          EOF
-          )
-          curl -X POST -H 'Content-type: application/json' -d "$PAYLOAD" "$SLACK_WEBHOOK_URL" || true
-          rm -f comment-summary.txt new-comments.json
