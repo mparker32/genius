@@ -1653,6 +1653,41 @@ select option {
     text-decoration: underline;
 }
 
+/* Comment search bar */
+.comment-search-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.comment-search-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--gray-border);
+    font-family: var(--sans);
+    font-size: 13px;
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+    max-width: 300px;
+}
+
+.comment-search-input:focus {
+    border-color: var(--green);
+}
+
+.comment-search-input::placeholder {
+    color: #999;
+}
+
+.comment-search-count {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: #888;
+    white-space: nowrap;
+}
+
 .comments-list {
     display: flex;
     flex-direction: column;

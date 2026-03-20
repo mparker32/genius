@@ -297,8 +297,28 @@ function renderCommenters(commenters) {
 
 // Render the public comments section for a rulemaking
 // Render submitted comments list
+let _commentSectionId = 0;
+
+function filterComments(inputEl) {
+    const query = inputEl.value.toLowerCase().trim();
+    const section = inputEl.closest('.submitted-comments-section');
+    const comments = section.querySelectorAll('.submitted-comment');
+    let visibleCount = 0;
+    comments.forEach(comment => {
+        const text = comment.textContent.toLowerCase();
+        const match = !query || text.includes(query);
+        comment.style.display = match ? '' : 'none';
+        if (match) visibleCount++;
+    });
+    const counter = section.querySelector('.comment-search-count');
+    if (counter) {
+        counter.textContent = query ? visibleCount + ' of ' + comments.length + ' comments' : comments.length + ' comments';
+    }
+}
+
 function renderSubmittedComments(comments, commentsPageUrl) {
     if (!comments || comments.length === 0) return '';
+    const sectionId = 'comments-section-' + (_commentSectionId++);
 
     const commentsHtml = comments.map(comment => {
         const dateFormatted = new Date(comment.date).toLocaleDateString('en-US', {
@@ -333,9 +353,13 @@ function renderSubmittedComments(comments, commentsPageUrl) {
         : '';
 
     return `
-        <div class="submitted-comments-section">
+        <div class="submitted-comments-section" id="${sectionId}">
             <h4>📄 ${comments.length} Comments Submitted</h4>
             ${viewAllLink}
+            <div class="comment-search-bar">
+                <input type="text" class="comment-search-input" placeholder="Search comments..." oninput="filterComments(this)" onclick="event.stopPropagation();">
+                <span class="comment-search-count">${comments.length} comments</span>
+            </div>
             <div class="comments-list">
                 ${commentsHtml}
             </div>
