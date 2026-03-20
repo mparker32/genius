@@ -656,7 +656,7 @@ function getStatus(deadlineDate) {
 
 // Calculate overall implementation progress
 function calculateOverallProgress() {
-    const totalDays = (IMPLEMENTATION_DATE - ENACTMENT_DATE) / (1000 * 60 * 60 * 24);
+    const totalDays = (MAIN_DEADLINE - ENACTMENT_DATE) / (1000 * 60 * 60 * 24);
     const elapsedDays = (CURRENT_DATE - ENACTMENT_DATE) / (1000 * 60 * 60 * 24);
     return Math.min(100, Math.max(0, (elapsedDays / totalDays) * 100));
 }
