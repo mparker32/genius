@@ -179,6 +179,78 @@ jobs:
             return ids;
           }
 
+
+          // ── Auto-insert new comments into data.js ──────────────
+          const DOCKET_TO_SECTION = {
+            'OCC-2025-0372': '"docketId": "OCC-2025-0372"',
+            'NCUA-2025-1335': '"docketId": "NCUA-2025-1335"',
+            'RIN-3064-AG20': '"commentsPageUrl": "https://www.fdic.gov/federal-register-publications/comments-rin-3064-ag20-december-19-2025"'
+          };
+
+          function autoInsertComments(newComments) {
+            if (newComments.length === 0) return false;
+            let dataJs = fs.readFileSync(DATA_FILE, 'utf8');
+            let modified = false;
+
+            const byDocket = {};
+            for (const c of newComments) {
+              const dk = c.docketId || 'unknown';
+              if (!byDocket[dk]) byDocket[dk] = [];
+              byDocket[dk].push(c);
+            }
+
+            for (const [docketId, comments] of Object.entries(byDocket)) {
+              const marker = DOCKET_TO_SECTION[docketId];
+              if (!marker) { console.log('  No marker for ' + docketId); continue; }
+
+              const markerIdx = dataJs.indexOf(marker);
+              if (markerIdx === -1) { console.log('  Marker not found for ' + docketId); continue; }
+
+              const scIdx = dataJs.indexOf('"submittedComments":', markerIdx);
+              if (scIdx === -1 || scIdx - markerIdx > 3000) { console.log('  No submittedComments near ' + docketId); continue; }
+
+              const arrayStart = dataJs.indexOf('[', scIdx);
+              let depth = 0, arrayEnd = -1;
+              for (let i = arrayStart; i < dataJs.length; i++) {
+                if (dataJs[i] === '[') depth++;
+                if (dataJs[i] === ']') depth--;
+                if (depth === 0) { arrayEnd = i; break; }
+              }
+              if (arrayEnd === -1) { console.log('  No array end for ' + docketId); continue; }
+
+              const newEntries = comments.map(c => {
+                const commenter = (c.commenter || 'Anonymous').replace(/"/g, '\\"');
+                const date = c.postedDate || 'Unknown';
+                const excerpt = (c.excerpt || '').substring(0, 200).replace(/"/g, '\\"').replace(/\n/g, ' ').trim();
+                const summary = excerpt ? 'New comment — summary pending review. Excerpt: ' + excerpt : 'New comment — summary pending review.';
+                if (c.pdfUrl) {
+                  return '{"commenter":"' + commenter + '","type":"Unknown","date":"' + date + '","pdfUrl":"' + c.pdfUrl + '","summary":"' + summary + '"}';
+                } else {
+                  return '{"commenter":"' + commenter + '","type":"Unknown","date":"' + date + '","commentId":"' + c.commentId + '","url":"' + c.url + '","summary":"' + summary + '"}';
+                }
+              });
+
+              const beforeClose = dataJs.substring(0, arrayEnd).trimEnd();
+              const hasExisting = beforeClose.indexOf('{', arrayStart) !== -1;
+              const separator = hasExisting ? ',\n            ' : '\n            ';
+              const insertion = separator + newEntries.join(',\n            ');
+              dataJs = dataJs.substring(0, arrayEnd) + insertion + '\n        ' + dataJs.substring(arrayEnd);
+              modified = true;
+              console.log('  Auto-inserted ' + comments.length + ' comment(s) into ' + docketId);
+            }
+
+            if (modified) {
+              try {
+                let html = fs.readFileSync('index.html', 'utf8');
+                const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/New_York' });
+                html = html.replace(/<span id="lastUpdated">.*?<\/span>/, '<span id="lastUpdated">' + today + '</span>');
+                fs.writeFileSync('index.html', html);
+              } catch(e) {}
+              fs.writeFileSync(DATA_FILE, dataJs);
+            }
+            return modified;
+          }
+
           // ── Main ────────────────────────────────────────────────
           async function main() {
             console.log('=== Comment Monitor ===');
@@ -233,12 +305,18 @@ jobs:
             seenData.lastChecked = new Date().toISOString();
             saveSeenComments(seenData);
 
+            let dataModified = false;
+            if (allNewComments.length > 0) {
+              dataModified = autoInsertComments(allNewComments);
+            }
+
             console.log(`\n=== Summary ===`);
             console.log(`Total new comments found: ${allNewComments.length}`);
 
             if (allNewComments.length > 0) {
               fs.writeFileSync('new-comments.json', JSON.stringify(allNewComments, null, 2));
               fs.writeFileSync('has-new-comments.txt', 'true');
+              if (dataModified) fs.writeFileSync('data-modified.txt', 'true');
 
               // Build a summary for notifications
               let summary = '';
@@ -261,7 +339,7 @@ jobs:
               // ── Rich Slack Block Kit message ────────────────────
               let slackBlocks = [
                 { type: 'header', text: { type: 'plain_text', text: '📬 New GENIUS Act Public Comments', emoji: true } },
-                { type: 'section', text: { type: 'mrkdwn', text: '*' + allNewComments.length + ' new comment(s)* filed on tracked dockets. Update the tracker with summaries when you get a chance.' } },
+                { type: 'section', text: { type: 'mrkdwn', text: '*' + allNewComments.length + ' new comment(s)* filed on tracked dockets.' + (dataModified ? ' The tracker has been auto-updated — review summaries when you get a chance.' : '') } },
                 { type: 'divider' }
               ];
               const allDocketIds = [...TRACKED_DOCKETS.map(d => d.docketId), 'RIN-3064-AG20'];
@@ -308,8 +386,14 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add seen-comments.json || true
-          git diff --cached --quiet || git commit -m "Auto-update: Refresh comment tracking data"
+          if [ -f data-modified.txt ]; then
+            git add seen-comments.json data.js index.html || true
+            git diff --cached --quiet || git commit -m "Auto-update: Add new public comments to tracker"
+            rm -f data-modified.txt
+          else
+            git add seen-comments.json || true
+            git diff --cached --quiet || git commit -m "Auto-update: Refresh comment tracking data"
+          fi
           git push || true
 
       - name: Send Slack notification
