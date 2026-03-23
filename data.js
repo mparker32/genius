@@ -130,6 +130,8 @@ const rulemakingsData = [
             {"commenter":"Crypto Council for Innovation & Blockchain Association","type":"Industry Association Coalition","date":"2026-03-17","commentId":"OCC-2025-0372-0024","url":"https://www.regulations.gov/comment/OCC-2025-0372-0024","summary":"Joint request with Blockchain Association for extension of the comment period on the OCC's proposed GENIUS Act rulemaking."},
             {"commenter":"OurFiin Inc.","type":"Company","date":"2026-03-17","commentId":"OCC-2025-0372-0025","url":"https://www.regulations.gov/comment/OCC-2025-0372-0025","summary":"Supports the OCC's proposed prudential framework; provides conceptual observations on board-grade governance approaches for supervisory consistency."},
             {"commenter":"Sutton Bank","type":"Bank","date":"2026-03-17","commentId":"OCC-2025-0372-0026","url":"https://www.regulations.gov/comment/OCC-2025-0372-0026","summary":"Substantive comments submitted as attachment on the proposed stablecoin issuance rules."}
+        ,
+            {"commenter":"Kevin Smith","type":"Unknown","date":"2026-03-23","commentId":"OCC-2025-0372-0029","url":"https://www.regulations.gov/comment/OCC-2025-0372-0029","summary":"New comment — summary pending review."}
         ]
     },
 {
