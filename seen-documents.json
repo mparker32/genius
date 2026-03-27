@@ -1,5 +1,5 @@
 {
-  "lastChecked": "2026-03-21T08:49:10.632Z",
+  "lastChecked": "2026-03-27T19:09:54.784Z",
   "seenDocuments": [
     {
       "document_number": "2025-23510",
@@ -374,6 +374,16 @@
       "url": "https://www.federalregister.gov/documents/2026/03/23/2026-05635/application-of-the-federal-securities-laws-to-certain-types-of-crypto-assets-and-certain",
       "source": "Federal Register",
       "first_seen": "2026-03-21"
+    },
+    {
+      "document_number": "2026-05959",
+      "title": "Regulatory Capital Rule: Category I and II Banking Organizations, Banking Organizations With Significant Trading Activity, and Optional Adoption for Other Banking Organizations",
+      "type": "Proposed Rule",
+      "agency": "Treasury Department",
+      "publication_date": "2026-03-27",
+      "url": "https://www.federalregister.gov/documents/2026/03/27/2026-05959/regulatory-capital-rule-category-i-and-ii-banking-organizations-banking-organizations-with",
+      "source": "Federal Register",
+      "first_seen": "2026-03-27"
     }
   ],
   "searchTerms": [
