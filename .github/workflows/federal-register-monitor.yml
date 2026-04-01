@@ -165,7 +165,68 @@ jobs:
           node check-federal-register.js
           rm check-federal-register.js
 
-      - name: Check for changes
+  
+    - name: Auto-update Federal Register URLs in data.js
+      run: |
+        cat << 'URLEOF' > update-fr-urls.js
+        const fs = require('fs');
+        const https = require('https');
+        function fetchUrl(url) {
+          return new Promise((resolve, reject) => {
+            https.get(url, { headers: { 'User-Agent': 'GENIUS-Act-Tracker/1.0' } }, (res) => {
+              if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+                return fetchUrl(res.headers.location).then(resolve).catch(reject);
+              }
+              let data = '';
+              res.on('data', chunk => data += chunk);
+              res.on('end', () => resolve(data));
+              res.on('error', reject);
+            }).on('error', reject);
+          });
+        }
+        async function main() {
+          console.log('=== FR URL Auto-Updater ===');
+          let dataJs = fs.readFileSync('data.js', 'utf8');
+          let modified = false;
+          const docketRegex = /"docketId":\s*"([^"]+)"/g;
+          const dockets = new Set();
+          let m;
+          while ((m = docketRegex.exec(dataJs)) !== null) dockets.add(m[1]);
+          for (const docketId of dockets) {
+            const idx = dataJs.indexOf('"docketId": "' + docketId + '"');
+            if (idx === -1) continue;
+            let objStart = idx, depth = 0;
+            for (let i = idx; i >= 0; i--) { if (dataJs[i] === '}') depth++; if (dataJs[i] === '{') { depth--; if (depth < 0) { objStart = i; break; } } }
+            let objEnd = idx; depth = 0;
+            for (let i = objStart; i < dataJs.length; i++) { if (dataJs[i] === '{') depth++; if (dataJs[i] === '}') { depth--; if (depth === 0) { objEnd = i + 1; break; } } }
+            const entry = dataJs.substring(objStart, objEnd);
+            const curlMatch = entry.match(/"commentUrl":\s*"([^"]+)"/);
+            if (!curlMatch) continue;
+            if (curlMatch[1].includes('federalregister.gov')) continue;
+            try {
+              const apiUrl = 'https://www.federalregister.gov/api/v1/documents.json?conditions[docket_id]=' + encodeURIComponent(docketId) + '&conditions[type][]=PRORULE&per_page=5&order=newest';
+              const raw = await fetchUrl(apiUrl);
+              const resp = JSON.parse(raw);
+              if (resp.results && resp.results.length > 0) {
+                const doc = resp.results[0];
+                dataJs = dataJs.substring(0, objStart) + entry.replace(curlMatch[0], '"commentUrl": "' + doc.html_url + '"') + dataJs.substring(objEnd);
+                modified = true;
+                console.log('Updated ' + docketId + ' -> ' + doc.html_url);
+              }
+            } catch (e) { console.error(docketId + ': ' + e.message); }
+          }
+          if (modified) {
+            fs.writeFileSync('data.js', dataJs);
+            try { let h = fs.readFileSync('index.html','utf8'); const d = new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric',timeZone:'America/New_York'}); h = h.replace(/<span id="lastUpdated">.*?<\/span>/,'<span id="lastUpdated">'+d+'</span>'); fs.writeFileSync('index.html',h); } catch(e) {}
+            fs.writeFileSync('has-updates.txt', 'true');
+          }
+        }
+        main().catch(e => console.error(e));
+        URLEOF
+        node update-fr-urls.js
+        rm update-fr-urls.js
+
+    - name: Check for changes
         id: changes
         run: |
           if [ -f has-updates.txt ]; then
@@ -180,7 +241,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add seen-documents.json index.html
+          git add seen-documents.json index.html data.js
           git commit -m "Auto-update: New Federal Register/agency documents"
           git push
 
