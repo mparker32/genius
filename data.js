@@ -156,7 +156,7 @@ const rulemakingsData = [
         "docketId": "TREAS-DO-2025-0037",
         "commentDeadline": "2026-06-02",
         "commentUrl": "https://home.treasury.gov/news/press-releases/sb0428",
-        "commentsPageUrl": "commentUrl": "https://www.federalregister.gov/documents/2026/04/03/2026-06489/genius-act-broad-based-principles-for-determining-whether-a-state-level-regulatory-regime-is",
+        "commentsPageUrl": "https://www.federalregister.gov/documents/2026/04/03/2026-06489/genius-act-broad-based-principles-for-determining-whether-a-state-level-regulatory-regime-is",
         "rulemakingStages": {
             "anprm": { "status": "closed", "date": "2025-09-03", "commentEndDate": "2025-11-04", "frDocNumber": "2025-19800" },
             "nprm": { "status": "published", "date": "2026-04-03", "frDocNumber": "2026-06489", "title": "GENIUS Act: Broad-Based Principles for Determining Whether a State-Level Regulatory Regime Is Substantially Similar" },
