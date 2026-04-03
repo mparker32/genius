@@ -326,6 +326,8 @@ const rulemakingsData = [
             {"commenter":"Auditchain Labs AG (Supplemental)","type":"Company","date":"2026-03-08","pdfUrl":"https://www.fdic.gov/federal-register-publications/supplemental-comment-auditchain-labs-ag-jason-meyers-rin-3064-ag20.pdf","summary":"Supplemental comment on audit and attestation requirements for stablecoin issuers."},
             {"commenter":"Empty Set LLC","type":"Company","date":"2026-03-10","pdfUrl":"https://www.fdic.gov/federal-register-publications/empty-set-llc-brice-love-rin-3064-ag20.pdf","summary":"Comments on the proposed FDIC stablecoin issuance approval framework."},
             {"commenter":"Aspen Institute Civic AI Leader (Rohan Sharma)","type":"Think Tank","date":"2026-03-14","pdfUrl":"https://www.fdic.gov/federal-register-publications/aspen-institute-civic-ai-leader-rohan-sharma-rin-3064-ag20.pdf","summary":"Comments on AI and technology governance in stablecoin regulation."}
+        ,
+            {"commenter":"DFK Helper LLC, Gabriel Grillo","type":"Unknown","date":"Unknown","pdfUrl":"https://www.fdic.gov/federal-register-publications/dfk-helper-llc-gabriel-grillo.pdf","summary":"New comment — summary pending review."}
         ]
     },
 {
