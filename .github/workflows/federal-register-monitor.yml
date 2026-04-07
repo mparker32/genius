@@ -226,7 +226,7 @@ jobs:
         node update-fr-urls.js
         rm update-fr-urls.js
 
-    - name: Check for changes
+      - name: Check for changes
         id: changes
         run: |
           if [ -f has-updates.txt ]; then
