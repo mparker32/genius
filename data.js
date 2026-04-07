@@ -169,7 +169,7 @@ const rulemakingsData = [
         "paradigmAttitude": "",
         "submittedComments": [
             {
-                "name": "Michael Ravnitzky",
+                "commenter": "Michael Ravnitzky",
                 "type": "Individual",
                 "date": "2026-04-05",
                 "summary": "Substantive comments submitted on Treasury's proposed principles for determining state-level regulatory regime substantial similarity.",
