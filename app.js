@@ -901,7 +901,7 @@ function updateStats() {
         const cat = getAgencyCategory(r.agency);
         uniqueCategories.add(cat.category);
     });
-    document.getElementById('totalAgencies').textContent = uniqueCategories.size;
+    document.getElementById('totalAgencies').textContent = 6;
     document.getElementById('showing').textContent = filteredData.length;
 }
 
