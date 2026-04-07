@@ -31,7 +31,7 @@ const rulemakingsData = [
         "agency": "OCC, Federal Reserve, FDIC, NCUA (+ State regulators for State qualified issuers)",
         "deadline": "Consistent with Section 13 (1 year after enactment)",
         "implementation": "18 months after enactment OR 120 days after final regs issued (whichever is earlier)",
-        "notes": "Requirements must be tailored to business model and risk profile, cannot exceed requirements sufficient to ensure ongoing operations. OCC addressed in NPRM (Feb 25, 2026) via 12 CFR 3 amendments. FDIC and NCUA have also issued separate NPRMs.",
+        "notes": "Requirements must be tailored to business model and risk profile, cannot exceed requirements sufficient to ensure ongoing operations. OCC issued NPRM (Feb 25, 2026) via 12 CFR 3 — see separate entry. FDIC issued NPRM (Apr 2026, RIN 3064-AG19) via 12 CFR Parts 324/330/350 — see separate entry. Federal Reserve and NCUA have not yet issued proposed rules.",
         "deadlineDate": "2026-07-18",
         "rulemakingType": "required",
         "paradigmCommentary": "",
