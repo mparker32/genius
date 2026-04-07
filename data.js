@@ -166,7 +166,16 @@ const rulemakingsData = [
         },
         "rulemakingType": "required",
         "paradigmCommentary": "",
-        "paradigmAttitude": ""
+        "paradigmAttitude": "",
+        "submittedComments": [
+            {
+                "name": "Michael Ravnitzky",
+                "type": "Individual",
+                "date": "2026-04-05",
+                "summary": "Substantive comments submitted on Treasury's proposed principles for determining state-level regulatory regime substantial similarity.",
+                "url": "https://www.regulations.gov/comment/TREAS-DO-2026-0232-0002"
+            }
+        ]
     },
 {
         "section": "4(c)(4)(D)",
@@ -194,7 +203,7 @@ const rulemakingsData = [
         "rulemakingStages": {
             "anprm": { "status": "skipped" },
             "nprm": { "status": "pending-publication", "date": "2026-04-07", "title": "GENIUS Act Requirements and Standards for FDIC-Supervised Permitted Payment Stablecoin Issuers and Insured Depository Institutions" },
-            "commentPeriod": { "status": "open", "startDate": "2026-04-07" },
+            "commentPeriod": { "status": "not-started" },
             "finalRule": { "status": "not-started" },
             "effective": { "status": "not-started" }
         },
