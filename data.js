@@ -187,13 +187,13 @@ const rulemakingsData = [
         "agency": "Federal Deposit Insurance Corporation (FDIC)",
         "deadline": "Consistent with Section 13 (1 year after enactment)",
         "implementation": "18 months after enactment OR 120 days after final regs issued (whichever is earlier)",
-        "notes": "FDIC NPRM (RIN 3064-AG19) implementing GENIUS Act requirements for FDIC-supervised PPSIs and custodians. Amends 12 CFR Parts 324, 330, and 350. Covers reserve assets, capital, liquidity, risk management, deposit insurance for stablecoin reserves, and tokenized deposit treatment. Aligned with OCC proposed rule. 60-day comment period. Comments accepted via fdic.gov, email (Comments@fdic.gov), or mail.",
+        "notes": "FDIC NPRM (RIN 3064-AG19) implementing GENIUS Act requirements for FDIC-supervised PPSIs and custodians. Amends 12 CFR Parts 324, 330, and 350. Covers reserve assets, capital, liquidity, risk management, deposit insurance for stablecoin reserves, and tokenized deposit treatment. Aligned with OCC proposed rule. 60-day comment period will begin once published in the Federal Register. Comments accepted via fdic.gov, email (Comments@fdic.gov), or mail.",
         "deadlineDate": "2026-07-18",
         "commentUrl": "https://www.fdic.gov/board/federal-register-notice-genius-act-requirements-and-standards-fdic-supervised-permitted",
         "commentsPageUrl": "https://www.fdic.gov/federal-register-publications",
         "rulemakingStages": {
             "anprm": { "status": "skipped" },
-            "nprm": { "status": "published", "date": "2026-04-07", "title": "GENIUS Act Requirements and Standards for FDIC-Supervised Permitted Payment Stablecoin Issuers and Insured Depository Institutions" },
+            "nprm": { "status": "pending-publication", "date": "2026-04-07", "title": "GENIUS Act Requirements and Standards for FDIC-Supervised Permitted Payment Stablecoin Issuers and Insured Depository Institutions" },
             "commentPeriod": { "status": "open", "startDate": "2026-04-07" },
             "finalRule": { "status": "not-started" },
             "effective": { "status": "not-started" }
