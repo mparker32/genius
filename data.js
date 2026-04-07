@@ -180,6 +180,28 @@ const rulemakingsData = [
         "paradigmCommentary": "",
         "paradigmAttitude": ""
     },
+
+{
+        "section": "4(a)(4)(A)",
+        "requirement": "Capital, liquidity, reserve asset diversification, risk management requirements, deposit insurance coverage for stablecoin reserves, and tokenized deposit treatment for FDIC-supervised permitted payment stablecoin issuers",
+        "agency": "Federal Deposit Insurance Corporation (FDIC)",
+        "deadline": "Consistent with Section 13 (1 year after enactment)",
+        "implementation": "18 months after enactment OR 120 days after final regs issued (whichever is earlier)",
+        "notes": "FDIC NPRM (RIN 3064-AG19) implementing GENIUS Act requirements for FDIC-supervised PPSIs and custodians. Amends 12 CFR Parts 324, 330, and 350. Covers reserve assets, capital, liquidity, risk management, deposit insurance for stablecoin reserves, and tokenized deposit treatment. Aligned with OCC proposed rule. 60-day comment period. Comments accepted via fdic.gov, email (Comments@fdic.gov), or mail.",
+        "deadlineDate": "2026-07-18",
+        "commentUrl": "https://www.fdic.gov/board/federal-register-notice-genius-act-requirements-and-standards-fdic-supervised-permitted",
+        "commentsPageUrl": "https://www.fdic.gov/federal-register-publications",
+        "rulemakingStages": {
+            "anprm": { "status": "skipped" },
+            "nprm": { "status": "published", "date": "2026-04-07", "title": "GENIUS Act Requirements and Standards for FDIC-Supervised Permitted Payment Stablecoin Issuers and Insured Depository Institutions" },
+            "commentPeriod": { "status": "open", "startDate": "2026-04-07" },
+            "finalRule": { "status": "not-started" },
+            "effective": { "status": "not-started" }
+        },
+        "rulemakingType": "required",
+        "paradigmCommentary": "",
+        "paradigmAttitude": ""
+    },
 {
         "section": "4(h)",
         "requirement": "General rulemaking to establish payment stablecoin regulatory framework",
