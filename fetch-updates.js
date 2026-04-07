@@ -124,6 +124,7 @@ async function fetchFederalRegisterDocuments() {
 // Note: FDIC uses Federal Register for comments, not Regulations.gov dockets
 const KNOWN_DOCKET_IDS = [
     'TREAS-DO-2025-0037',  // Treasury GENIUS Act Implementation ANPRM
+    'TREAS-DO-2026-0232',  // Treasury GENIUS Act 4(c)(2) State Similarity NPRM
     'FINCEN-2025-0003',    // FinCEN Illicit Activity Detection
 ];
 

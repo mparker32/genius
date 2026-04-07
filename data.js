@@ -153,7 +153,7 @@ const rulemakingsData = [
         "implementation": "18 months after enactment OR 120 days after final regs issued (whichever is earlier)",
         "notes": "Treasury issued NPRM on April 3, 2026 establishing principles for determining state-level regime substantial similarity. 60-day comment period.",
         "deadlineDate": "2027-01-18",
-        "docketId": "TREAS-DO-2025-0037",
+        "docketId": "TREAS-DO-2026-0232",
         "commentDeadline": "2026-06-02",
         "commentUrl": "https://home.treasury.gov/news/press-releases/sb0428",
         "commentsPageUrl": "https://www.federalregister.gov/documents/2026/04/03/2026-06489/genius-act-broad-based-principles-for-determining-whether-a-state-level-regulatory-regime-is",
