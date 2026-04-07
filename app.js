@@ -48,7 +48,7 @@ function clearAllFilters() {
     document.getElementById('openCommentBtn').classList.remove('active');
     document.getElementById('preRulemakingBtn').classList.remove('active');
     document.getElementById('notNoticedBtn').classList.remove('active');
-    document.getElementById('priorityBtn').classList.remove('active');
+    var pb = document.getElementById('priorityBtn'); if (pb) pb.classList.remove('active');
     priorityFilterActive = false;
     filterAndSort();
 }
