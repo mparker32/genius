@@ -18,21 +18,26 @@
     "NCUA-2025-1335-0011",
     "NCUA-2025-1335-0012",
     "NCUA-2025-1335-0010",
-    "FDIC-aba-bpi-clearing-house-cba-icba-drew-ruben-rin-3064-ag20"
+    "FDIC-aba-bpi-clearing-house-cba-icba-drew-ruben-rin-3064-ag20",
+    "OCC-2025-0372-0045",
+    "OCC-2025-0372-0043",
+    "OCC-2025-0372-0042",
+    "OCC-2025-0372-0046",
+    "OCC-2025-0372-0044"
   ],
-  "lastChecked": "2026-04-08T12:51:00.268Z",
+  "lastChecked": "2026-04-08T18:54:05.617Z",
   "commentCounts": {
     "OCC-2025-0372": {
-      "total": 30,
-      "checkedAt": "2026-04-08T12:50:58.395Z"
+      "total": 35,
+      "checkedAt": "2026-04-08T18:54:04.277Z"
     },
     "NCUA-2025-1335": {
       "total": 9,
-      "checkedAt": "2026-04-08T12:50:58.829Z"
+      "checkedAt": "2026-04-08T18:54:04.883Z"
     },
     "FDIC-RIN-3064-AG20": {
       "total": 14,
-      "checkedAt": "2026-04-08T12:51:00.268Z"
+      "checkedAt": "2026-04-08T18:54:05.617Z"
     }
   }
 }

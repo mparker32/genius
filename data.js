@@ -143,6 +143,12 @@ const rulemakingsData = [
             {"commenter":"Courtney Lynn Atwood","type":"Unknown","date":"2026-04-01","commentId":"OCC-2025-0372-0040","url":"https://www.regulations.gov/comment/OCC-2025-0372-0040","summary":"New comment — summary pending review."}
         ,
             {"commenter":"Lee Widman","type":"Unknown","date":"2026-04-01","commentId":"OCC-2025-0372-0041","url":"https://www.regulations.gov/comment/OCC-2025-0372-0041","summary":"New comment — summary pending review."}
+        ,
+            {"commenter":"Mark Gidley","type":"Unknown","date":"2026-04-08","commentId":"OCC-2025-0372-0045","url":"https://www.regulations.gov/comment/OCC-2025-0372-0045","summary":"New comment — summary pending review."},
+            {"commenter":"Basis Protocol","type":"Unknown","date":"2026-04-08","commentId":"OCC-2025-0372-0043","url":"https://www.regulations.gov/comment/OCC-2025-0372-0043","summary":"New comment — summary pending review."},
+            {"commenter":"Adam Ogilvie","type":"Unknown","date":"2026-04-08","commentId":"OCC-2025-0372-0042","url":"https://www.regulations.gov/comment/OCC-2025-0372-0042","summary":"New comment — summary pending review."},
+            {"commenter":"Ed Oliver","type":"Unknown","date":"2026-04-08","commentId":"OCC-2025-0372-0046","url":"https://www.regulations.gov/comment/OCC-2025-0372-0046","summary":"New comment — summary pending review."},
+            {"commenter":"The Network Firm LLP","type":"Unknown","date":"2026-04-08","commentId":"OCC-2025-0372-0044","url":"https://www.regulations.gov/comment/OCC-2025-0372-0044","summary":"New comment — summary pending review."}
         ]
     },
 {
