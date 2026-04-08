@@ -359,6 +359,8 @@ const rulemakingsData = [
             {"commenter":"Aspen Institute Civic AI Leader (Rohan Sharma)","type":"Think Tank","date":"2026-03-14","pdfUrl":"https://www.fdic.gov/federal-register-publications/aspen-institute-civic-ai-leader-rohan-sharma-rin-3064-ag20.pdf","summary":"Comments on AI and technology governance in stablecoin regulation."}
         ,
             {"commenter":"DFK Helper LLC, Gabriel Grillo","type":"Unknown","date":"Unknown","pdfUrl":"https://www.fdic.gov/federal-register-publications/dfk-helper-llc-gabriel-grillo.pdf","summary":"New comment — summary pending review."}
+        ,
+            {"commenter":"American Bankers Association (ABA), Bank Policy Institute (BPI), The Clearing House Association, Consumer Bankers Association (CBA), and Independent Community Bankers of America (ICBA), Drew Ruben","type":"Unknown","date":"Unknown","pdfUrl":"https://www.fdic.gov/federal-register-publications/aba-bpi-clearing-house-cba-icba-drew-ruben-rin-3064-ag20.pdf","summary":"New comment — summary pending review."}
         ]
     },
 {

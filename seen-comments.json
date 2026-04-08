@@ -17,21 +17,22 @@
     "FDIC-dfk-helper-llc-gabriel-grillo",
     "NCUA-2025-1335-0011",
     "NCUA-2025-1335-0012",
-    "NCUA-2025-1335-0010"
+    "NCUA-2025-1335-0010",
+    "FDIC-aba-bpi-clearing-house-cba-icba-drew-ruben-rin-3064-ag20"
   ],
-  "lastChecked": "2026-04-08T06:59:30.677Z",
+  "lastChecked": "2026-04-08T12:51:00.268Z",
   "commentCounts": {
     "OCC-2025-0372": {
       "total": 30,
-      "checkedAt": "2026-04-08T06:59:29.267Z"
+      "checkedAt": "2026-04-08T12:50:58.395Z"
     },
     "NCUA-2025-1335": {
       "total": 9,
-      "checkedAt": "2026-04-08T06:59:29.639Z"
+      "checkedAt": "2026-04-08T12:50:58.829Z"
     },
     "FDIC-RIN-3064-AG20": {
-      "total": 13,
-      "checkedAt": "2026-04-08T06:59:30.677Z"
+      "total": 14,
+      "checkedAt": "2026-04-08T12:51:00.268Z"
     }
   }
 }
