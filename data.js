@@ -151,6 +151,8 @@ const rulemakingsData = [
             {"commenter":"The Network Firm LLP","type":"Unknown","date":"2026-04-08","commentId":"OCC-2025-0372-0044","url":"https://www.regulations.gov/comment/OCC-2025-0372-0044","summary":"New comment — summary pending review."}
         ,
             {"commenter":"U.S. Chamber of Commerce","type":"Unknown","date":"2026-04-08","commentId":"OCC-2025-0372-0047","url":"https://www.regulations.gov/comment/OCC-2025-0372-0047","summary":"New comment — summary pending review."}
+        ,
+            {"commenter":"Louis Marin","type":"Unknown","date":"2026-04-09","commentId":"OCC-2025-0372-0048","url":"https://www.regulations.gov/comment/OCC-2025-0372-0048","summary":"New comment — summary pending review."}
         ]
     },
 {
@@ -369,6 +371,8 @@ const rulemakingsData = [
             {"commenter":"DFK Helper LLC, Gabriel Grillo","type":"Unknown","date":"Unknown","pdfUrl":"https://www.fdic.gov/federal-register-publications/dfk-helper-llc-gabriel-grillo.pdf","summary":"New comment — summary pending review."}
         ,
             {"commenter":"American Bankers Association (ABA), Bank Policy Institute (BPI), The Clearing House Association, Consumer Bankers Association (CBA), and Independent Community Bankers of America (ICBA), Drew Ruben","type":"Unknown","date":"Unknown","pdfUrl":"https://www.fdic.gov/federal-register-publications/aba-bpi-clearing-house-cba-icba-drew-ruben-rin-3064-ag20.pdf","summary":"New comment — summary pending review."}
+        ,
+            {"commenter":"XBRL US, Campbell Pryde","type":"Unknown","date":"Unknown","pdfUrl":"https://www.fdic.gov/federal-register-publications/xbrl-us-campbell-pryde-rin-3064-ag20.pdf","summary":"New comment — summary pending review."}
         ]
     },
 {
