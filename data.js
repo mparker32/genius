@@ -149,6 +149,8 @@ const rulemakingsData = [
             {"commenter":"Adam Ogilvie","type":"Unknown","date":"2026-04-08","commentId":"OCC-2025-0372-0042","url":"https://www.regulations.gov/comment/OCC-2025-0372-0042","summary":"New comment — summary pending review."},
             {"commenter":"Ed Oliver","type":"Unknown","date":"2026-04-08","commentId":"OCC-2025-0372-0046","url":"https://www.regulations.gov/comment/OCC-2025-0372-0046","summary":"New comment — summary pending review."},
             {"commenter":"The Network Firm LLP","type":"Unknown","date":"2026-04-08","commentId":"OCC-2025-0372-0044","url":"https://www.regulations.gov/comment/OCC-2025-0372-0044","summary":"New comment — summary pending review."}
+        ,
+            {"commenter":"U.S. Chamber of Commerce","type":"Unknown","date":"2026-04-08","commentId":"OCC-2025-0372-0047","url":"https://www.regulations.gov/comment/OCC-2025-0372-0047","summary":"New comment — summary pending review."}
         ]
     },
 {
