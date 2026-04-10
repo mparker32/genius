@@ -373,6 +373,8 @@ const rulemakingsData = [
             {"commenter":"American Bankers Association (ABA), Bank Policy Institute (BPI), The Clearing House Association, Consumer Bankers Association (CBA), and Independent Community Bankers of America (ICBA), Drew Ruben","type":"Unknown","date":"Unknown","pdfUrl":"https://www.fdic.gov/federal-register-publications/aba-bpi-clearing-house-cba-icba-drew-ruben-rin-3064-ag20.pdf","summary":"New comment — summary pending review."}
         ,
             {"commenter":"XBRL US, Campbell Pryde","type":"Unknown","date":"Unknown","pdfUrl":"https://www.fdic.gov/federal-register-publications/xbrl-us-campbell-pryde-rin-3064-ag20.pdf","summary":"New comment — summary pending review."}
+        ,
+            {"commenter":"E. Lawrence Anderson","type":"Unknown","date":"Unknown","pdfUrl":"https://www.fdic.gov/federal-register-publications/e-lawrence-anderson-rin-3064-ag20.pdf","summary":"New comment — summary pending review."}
         ]
     },
 {

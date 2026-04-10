@@ -26,21 +26,22 @@
     "OCC-2025-0372-0044",
     "OCC-2025-0372-0047",
     "OCC-2025-0372-0048",
-    "FDIC-xbrl-us-campbell-pryde-rin-3064-ag20"
+    "FDIC-xbrl-us-campbell-pryde-rin-3064-ag20",
+    "FDIC-e-lawrence-anderson-rin-3064-ag20"
   ],
-  "lastChecked": "2026-04-10T12:49:56.398Z",
+  "lastChecked": "2026-04-10T18:48:49.864Z",
   "commentCounts": {
     "OCC-2025-0372": {
       "total": 37,
-      "checkedAt": "2026-04-10T12:49:55.002Z"
+      "checkedAt": "2026-04-10T18:48:48.326Z"
     },
     "NCUA-2025-1335": {
       "total": 9,
-      "checkedAt": "2026-04-10T12:49:55.429Z"
+      "checkedAt": "2026-04-10T18:48:48.751Z"
     },
     "FDIC-RIN-3064-AG20": {
-      "total": 15,
-      "checkedAt": "2026-04-10T12:49:56.398Z"
+      "total": 16,
+      "checkedAt": "2026-04-10T18:48:49.864Z"
     }
   }
 }
