@@ -214,8 +214,8 @@ const rulemakingsData = [
         "implementation": "18 months after enactment OR 120 days after final regs issued (whichever is earlier)",
         "notes": "FDIC NPRM (RIN 3064-AG19) implementing GENIUS Act requirements for FDIC-supervised PPSIs and custodians. Amends 12 CFR Parts 324, 330, and 350. Covers reserve assets, capital, liquidity, risk management, deposit insurance for stablecoin reserves, and tokenized deposit treatment. Aligned with OCC proposed rule. Published in the Federal Register on April 10, 2026 (FR Doc 2026-06974). 60-day comment period open through June 9, 2026. Comments accepted via fdic.gov, email (Comments@fdic.gov), or mail.",
         "deadlineDate": "2026-07-18",
-        "commentUrl": "https://www.fdic.gov/board/federal-register-notice-genius-act-requirements-and-standards-fdic-supervised-permitted",
-        "commentsPageUrl": "https://www.fdic.gov/federal-register-publications",
+        "commentUrl": "https://www.fdic.gov/federal-register-publications",
+        "commentsPageUrl": "https://www.federalregister.gov/documents/2026/04/10/2026-06974/genius-act-requirements-and-standards-for-fdic-supervised-permitted-payment-stablecoin-issuers-and",
         "rulemakingStages": {
             "anprm": { "status": "skipped" },
             "nprm": { "status": "published", "date": "2026-04-10", "frDocNumber": "2026-06974", "title": "GENIUS Act Requirements and Standards for FDIC-Supervised Permitted Payment Stablecoin Issuers and Insured Depository Institutions" },
