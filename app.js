@@ -608,26 +608,30 @@ function renderCommentSection(item) {
             ? renderSubmittedComments(item.submittedComments, item.commentsPageUrl)
             : '';
 
-        // If we have a comments page URL (like FDIC.gov), don't show the Federal Register link
-        // since comments can be accessed/submitted via the agency page
-        const federalRegisterLink = item.commentsPageUrl ? '' : `
-            <div class="docket-link-section">
-                <p>Comments can be submitted via the Federal Register</p>
-                ${commentStatus}
-                <a href="${item.commentUrl}" target="_blank" class="docket-link-btn" onclick="event.stopPropagation();">
-                    Submit Comment via Federal Register →
-                </a>
-            </div>
-        `;
-
-        return `
+        // Show Federal Register link and comments link for entries using commentUrl
+        const frUrl = getFederalRegisterUrl(item);
+        const frLink = frUrl ? \`
+            <a href="\${frUrl}" target="_blank" class="docket-link-btn fr-link-btn" onclick="event.stopPropagation();">
+                View on Federal Register \u2192
+            </a>\` : '';
+        const commentsLink = item.commentsPageUrl ? \`
+            <a href="\${item.commentsPageUrl}" target="_blank" class="docket-link-btn" onclick="event.stopPropagation();">
+                \${item.commentsPageUrl.includes('fdic.gov') ? 'View Comments on FDIC.gov \u2192' : 'Submit Comment via Federal Register \u2192'}
+            </a>\` : item.commentUrl ? \`
+            <a href="\${item.commentUrl}" target="_blank" class="docket-link-btn" onclick="event.stopPropagation();">
+                Submit Comment \u2192
+            </a>\` : '';
+        return \`
             <div class="public-comments-section">
-                <h3>💬 Public Comments</h3>
-                ${commentStatus && item.commentsPageUrl ? `<div class="comment-status-standalone">${commentStatus}</div>` : ''}
-                ${federalRegisterLink}
-                ${submittedCommentsHtml}
+                <h3>\ud83d\udcac Public Comments</h3>
+                <div class="docket-link-section">
+                    \${commentStatus}
+                    \${frLink}
+                    \${commentsLink}
+                </div>
+                \${submittedCommentsHtml}
             </div>
-        `;
+        \`;
     }
 
     // If the rulemaking has been noticed, search regulations.gov
