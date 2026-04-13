@@ -54,8 +54,8 @@ const rulemakingsData = [
         "commentsPageUrl": "https://www.regulations.gov/document/FINCEN-2026-0100-0001/comment",
         "rulemakingStages": {
             "anprm": { "status": "closed", "date": "2025-09-03", "commentEndDate": "2025-11-04", "frDocNumber": "2025-19800" },
-            "nprm": { "status": "not-started" },
-            "commentPeriod": { "status": "not-started" },
+            "nprm": { "status": "published", "date": "2026-04-10", "frDocNumber": "2026-06963", "title": "Permitted Payment Stablecoin Issuer AML/CFT and Sanctions Compliance Program Requirements" },
+            "commentPeriod": { "status": "open", "startDate": "2026-04-10", "endDate": "2026-06-09" },
             "finalRule": { "status": "not-started" },
             "effective": { "status": "not-started" }
         },
