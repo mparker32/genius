@@ -13,11 +13,8 @@ const rulemakingsData = [
         "implementation": "18 months after enactment OR 120 days after final regs issued (whichever is earlier)",
         "notes": "",
         "deadlineDate": "2026-07-18",
-        "docketId": "FINCEN-2026-0100",
-        "commentDeadline": "2026-06-09",
-        "commentUrl": "https://www.federalregister.gov/documents/2026/04/10/2026-06963/permitted-payment-stablecoin-issuer-anti-money-launderingcountering-the-financing-of-terrorism",
-        "commentsPageUrl": "https://www.regulations.gov/document/FINCEN-2026-0100-0001/comment",
-        "rulemakingStages": {
+        "docketId": "TREAS-DO-2025-0037",
+                                "rulemakingStages": {
             "anprm": { "status": "closed", "date": "2025-09-03", "commentEndDate": "2025-11-04", "frDocNumber": "2025-19800" },
             "nprm": { "status": "not-started" },
             "commentPeriod": { "status": "not-started" },
@@ -491,11 +488,8 @@ const rulemakingsData = [
         "implementation": "18 months after enactment OR 120 days after final regs issued (whichever is earlier)",
         "notes": "Related to foreign payment stablecoin issuer compliance with lawful orders",
         "deadlineDate": "2026-07-18",
-        "docketId": "FINCEN-2026-0100",
-        "commentDeadline": "2026-06-09",
-        "commentUrl": "https://www.federalregister.gov/documents/2026/04/10/2026-06963/permitted-payment-stablecoin-issuer-anti-money-launderingcountering-the-financing-of-terrorism",
-        "commentsPageUrl": "https://www.regulations.gov/document/FINCEN-2026-0100-0001/comment",
-        "rulemakingStages": {
+        "docketId": "TREAS-DO-2025-0037",
+                                "rulemakingStages": {
             "anprm": { "status": "closed", "date": "2025-09-03", "commentEndDate": "2025-11-04", "frDocNumber": "2025-19800" },
             "nprm": { "status": "not-started" },
             "commentPeriod": { "status": "not-started" },
@@ -551,11 +545,8 @@ const rulemakingsData = [
         "implementation": "18 months after enactment OR 120 days after final regs issued (whichever is earlier)",
         "notes": "",
         "deadlineDate": "2026-07-18",
-        "docketId": "FINCEN-2026-0100",
-        "commentDeadline": "2026-06-09",
-        "commentUrl": "https://www.federalregister.gov/documents/2026/04/10/2026-06963/permitted-payment-stablecoin-issuer-anti-money-launderingcountering-the-financing-of-terrorism",
-        "commentsPageUrl": "https://www.regulations.gov/document/FINCEN-2026-0100-0001/comment",
-        "rulemakingStages": {
+        "docketId": "TREAS-DO-2025-0037",
+                                "rulemakingStages": {
             "anprm": { "status": "closed", "date": "2025-09-03", "commentEndDate": "2025-11-04", "frDocNumber": "2025-19800" },
             "nprm": { "status": "not-started" },
             "commentPeriod": { "status": "not-started" },
