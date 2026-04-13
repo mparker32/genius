@@ -65,6 +65,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+
+// Get Federal Register URL from the most recent frDocNumber in rulemaking stages
+function getFederalRegisterUrl(item) {
+    var stages = item.rulemakingStages;
+    if (!stages) return null;
+    var stageOrder = ['nprm', 'anprm', 'finalRule'];
+    for (var i = 0; i < stageOrder.length; i++) {
+        var stage = stages[stageOrder[i]];
+        if (stage && stage.frDocNumber) {
+            return 'https://www.federalregister.gov/d/' + stage.frDocNumber;
+        }
+    }
+    return null;
+}
+
 // Check if a rulemaking has been noticed (published in Federal Register)
 function getRulemakingStatus(item) {
     const status = {
@@ -567,6 +582,7 @@ function renderCommentSection(item) {
                 <div class="docket-link-section">
                     <p>This rulemaking is tracked under docket <strong>${item.docketId}</strong></p>
                     ${commentStatus}
+                    ${getFederalRegisterUrl(item) ? '<a href="' + getFederalRegisterUrl(item) + '" target="_blank" class="docket-link-btn fr-link-btn" onclick="event.stopPropagation();">View on Federal Register \u2192</a>' : ''}
                     <a href="${docketUrl}" target="_blank" class="docket-link-btn" onclick="event.stopPropagation();">
                         View Comments on Regulations.gov →
                     </a>

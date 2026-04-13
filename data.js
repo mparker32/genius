@@ -91,7 +91,7 @@ const rulemakingsData = [
         },
         "nprm": {
                 "status": "published",
-                "date": "2026-02-25",
+                "date": "2026-02-25", "frDocNumber": "2026-04089",
                 "title": "GENIUS Act Regulations: Notice of Proposed Rulemaking"
         },
         "commentPeriod": {
