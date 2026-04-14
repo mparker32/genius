@@ -165,6 +165,8 @@ const rulemakingsData = [
             {"commenter":"Stand With Crypto Delaware","type":"Unknown","date":"2026-04-13","commentId":"OCC-2025-0372-0054","url":"https://www.regulations.gov/comment/OCC-2025-0372-0054","summary":"New comment — summary pending review."},
             {"commenter":"Stand With Crypto Iowa","type":"Unknown","date":"2026-04-13","commentId":"OCC-2025-0372-0053","url":"https://www.regulations.gov/comment/OCC-2025-0372-0053","summary":"New comment — summary pending review."},
             {"commenter":"Paul Pinyan","type":"Unknown","date":"2026-04-13","commentId":"OCC-2025-0372-0056","url":"https://www.regulations.gov/comment/OCC-2025-0372-0056","summary":"New comment — summary pending review."}
+        ,
+            {"commenter":"Zach Zukowski","type":"Unknown","date":"2026-04-14","commentId":"OCC-2025-0372-0057","url":"https://www.regulations.gov/comment/OCC-2025-0372-0057","summary":"New comment — summary pending review."}
         ]
     },
 {
@@ -448,6 +450,33 @@ const rulemakingsData = [
             {"commenter":"Comment from International Organization for Standardization (ISO), Standards Advisory Group (SAG)","type":"Unknown","date":"2026-04-06","commentId":"NCUA-2025-1335-0011","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0011","summary":"New comment — summary pending review."},
             {"commenter":"Anonymous Comment","type":"Unknown","date":"2026-04-06","commentId":"NCUA-2025-1335-0012","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0012","summary":"New comment — summary pending review."},
             {"commenter":"Comment from Adam, Ogilvie","type":"Unknown","date":"2026-04-06","commentId":"NCUA-2025-1335-0010","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0010","summary":"New comment — summary pending review."}
+        ,
+            {"commenter":"Comment from Ohio Credit Union League","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0017","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0017","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from CrossState Credit Union Association","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0030","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0030","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from America's Credit Unions","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0033","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0033","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from 7T World","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0036","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0036","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from Corporate Central Credit Union","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0032","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0032","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from Cornerstone Credit Union League","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0035","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0035","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from Illinois Credit Union League","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0022","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0022","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from JIM, LIN","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0020","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0020","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from American Mutual Share Insurance Corporation","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0013","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0013","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from TruStage","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0018","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0018","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from Suncoat Credit Union","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0031","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0031","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from Auditchain Labs AG","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0034","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0034","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from Spokane Teachers Credit Union","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0026","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0026","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from Cooperative Credit Union Association","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0029","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0029","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from Citizens Equity First Credit Union","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0027","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0027","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from Alloya Corporate Federal Credit Union","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0016","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0016","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from Larry, Pruss","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0015","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0015","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from XBRL US","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0014","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0014","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from Coastal Credit Union","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0019","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0019","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from DTI Foundation","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0021","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0021","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from Defense Credit Union Council","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0028","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0028","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from Circle Internet Group, Inc.","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0024","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0024","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from American Bankers Association","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0023","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0023","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from Paradigm Operations LP","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0025","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0025","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from The Digital Chamber","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0038","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0038","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from GoWest Credit Union Association","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0037","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0037","summary":"New comment — summary pending review."}
         ]
     },
 {
