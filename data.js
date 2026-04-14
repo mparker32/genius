@@ -159,6 +159,12 @@ const rulemakingsData = [
         ,
             {"commenter":"Aaron Epstein","type":"Unknown","date":"2026-04-10","commentId":"OCC-2025-0372-0051","url":"https://www.regulations.gov/comment/OCC-2025-0372-0051","summary":"New comment — summary pending review."},
             {"commenter":"Habify Labs, LLC","type":"Unknown","date":"2026-04-10","commentId":"OCC-2025-0372-0050","url":"https://www.regulations.gov/comment/OCC-2025-0372-0050","summary":"New comment — summary pending review."}
+        ,
+            {"commenter":"Bob Fincher","type":"Unknown","date":"2026-04-13","commentId":"OCC-2025-0372-0055","url":"https://www.regulations.gov/comment/OCC-2025-0372-0055","summary":"New comment — summary pending review."},
+            {"commenter":"ZKProva Inc.","type":"Unknown","date":"2026-04-13","commentId":"OCC-2025-0372-0052","url":"https://www.regulations.gov/comment/OCC-2025-0372-0052","summary":"New comment — summary pending review."},
+            {"commenter":"Stand With Crypto Delaware","type":"Unknown","date":"2026-04-13","commentId":"OCC-2025-0372-0054","url":"https://www.regulations.gov/comment/OCC-2025-0372-0054","summary":"New comment — summary pending review."},
+            {"commenter":"Stand With Crypto Iowa","type":"Unknown","date":"2026-04-13","commentId":"OCC-2025-0372-0053","url":"https://www.regulations.gov/comment/OCC-2025-0372-0053","summary":"New comment — summary pending review."},
+            {"commenter":"Paul Pinyan","type":"Unknown","date":"2026-04-13","commentId":"OCC-2025-0372-0056","url":"https://www.regulations.gov/comment/OCC-2025-0372-0056","summary":"New comment — summary pending review."}
         ]
     },
 {
