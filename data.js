@@ -180,6 +180,12 @@ const rulemakingsData = [
             {"commenter":"Bobby Hurst","type":"Unknown","date":"2026-04-14","commentId":"OCC-2025-0372-0063","url":"https://www.regulations.gov/comment/OCC-2025-0372-0063","summary":"New comment — summary pending review."},
             {"commenter":"ARGA Observatory","type":"Unknown","date":"2026-04-14","commentId":"OCC-2025-0372-0059","url":"https://www.regulations.gov/comment/OCC-2025-0372-0059","summary":"New comment — summary pending review."},
             {"commenter":"Stand With Crypto Arkansas","type":"Unknown","date":"2026-04-14","commentId":"OCC-2025-0372-0058","url":"https://www.regulations.gov/comment/OCC-2025-0372-0058","summary":"New comment — summary pending review."}
+        ,
+            {"commenter":"Ron Anders","type":"Unknown","date":"2026-04-15","commentId":"OCC-2025-0372-0071","url":"https://www.regulations.gov/comment/OCC-2025-0372-0071","summary":"New comment — summary pending review."},
+            {"commenter":"Stand With Crypto Missouri","type":"Unknown","date":"2026-04-15","commentId":"OCC-2025-0372-0070","url":"https://www.regulations.gov/comment/OCC-2025-0372-0070","summary":"New comment — summary pending review."},
+            {"commenter":"Rick Pate","type":"Unknown","date":"2026-04-15","commentId":"OCC-2025-0372-0072","url":"https://www.regulations.gov/comment/OCC-2025-0372-0072","summary":"New comment — summary pending review."},
+            {"commenter":"Stand With Crypto Texas","type":"Unknown","date":"2026-04-15","commentId":"OCC-2025-0372-0073","url":"https://www.regulations.gov/comment/OCC-2025-0372-0073","summary":"New comment — summary pending review."},
+            {"commenter":"Capital Markets & Technology Partners","type":"Unknown","date":"2026-04-15","commentId":"OCC-2025-0372-0074","url":"https://www.regulations.gov/comment/OCC-2025-0372-0074","summary":"New comment — summary pending review."}
         ]
     },
 {
