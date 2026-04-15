@@ -167,6 +167,19 @@ const rulemakingsData = [
             {"commenter":"Paul Pinyan","type":"Unknown","date":"2026-04-13","commentId":"OCC-2025-0372-0056","url":"https://www.regulations.gov/comment/OCC-2025-0372-0056","summary":"New comment — summary pending review."}
         ,
             {"commenter":"Zach Zukowski","type":"Unknown","date":"2026-04-14","commentId":"OCC-2025-0372-0057","url":"https://www.regulations.gov/comment/OCC-2025-0372-0057","summary":"New comment — summary pending review."}
+        ,
+            {"commenter":"Stand With Crypto Colorado","type":"Unknown","date":"2026-04-14","commentId":"OCC-2025-0372-0060","url":"https://www.regulations.gov/comment/OCC-2025-0372-0060","summary":"New comment — summary pending review."},
+            {"commenter":"Arkansas State Chamber of Commerce","type":"Unknown","date":"2026-04-14","commentId":"OCC-2025-0372-0066","url":"https://www.regulations.gov/comment/OCC-2025-0372-0066","summary":"New comment — summary pending review."},
+            {"commenter":"BitGo Holdings, Inc.","type":"Unknown","date":"2026-04-14","commentId":"OCC-2025-0372-0064","url":"https://www.regulations.gov/comment/OCC-2025-0372-0064","summary":"New comment — summary pending review."},
+            {"commenter":"MICCEL, Inc.","type":"Unknown","date":"2026-04-14","commentId":"OCC-2025-0372-0062","url":"https://www.regulations.gov/comment/OCC-2025-0372-0062","summary":"New comment — summary pending review."},
+            {"commenter":"Stand With Crypto California","type":"Unknown","date":"2026-04-14","commentId":"OCC-2025-0372-0068","url":"https://www.regulations.gov/comment/OCC-2025-0372-0068","summary":"New comment — summary pending review."},
+            {"commenter":"Tokenization Systems","type":"Unknown","date":"2026-04-14","commentId":"OCC-2025-0372-0069","url":"https://www.regulations.gov/comment/OCC-2025-0372-0069","summary":"New comment — summary pending review."},
+            {"commenter":"Stand With Crypto Kansas","type":"Unknown","date":"2026-04-14","commentId":"OCC-2025-0372-0061","url":"https://www.regulations.gov/comment/OCC-2025-0372-0061","summary":"New comment — summary pending review."},
+            {"commenter":"DeAnn Vaught","type":"Unknown","date":"2026-04-14","commentId":"OCC-2025-0372-0065","url":"https://www.regulations.gov/comment/OCC-2025-0372-0065","summary":"New comment — summary pending review."},
+            {"commenter":"Stand With Crypto Nebraska","type":"Unknown","date":"2026-04-14","commentId":"OCC-2025-0372-0067","url":"https://www.regulations.gov/comment/OCC-2025-0372-0067","summary":"New comment — summary pending review."},
+            {"commenter":"Bobby Hurst","type":"Unknown","date":"2026-04-14","commentId":"OCC-2025-0372-0063","url":"https://www.regulations.gov/comment/OCC-2025-0372-0063","summary":"New comment — summary pending review."},
+            {"commenter":"ARGA Observatory","type":"Unknown","date":"2026-04-14","commentId":"OCC-2025-0372-0059","url":"https://www.regulations.gov/comment/OCC-2025-0372-0059","summary":"New comment — summary pending review."},
+            {"commenter":"Stand With Crypto Arkansas","type":"Unknown","date":"2026-04-14","commentId":"OCC-2025-0372-0058","url":"https://www.regulations.gov/comment/OCC-2025-0372-0058","summary":"New comment — summary pending review."}
         ]
     },
 {
@@ -477,6 +490,12 @@ const rulemakingsData = [
             {"commenter":"Comment from Paradigm Operations LP","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0025","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0025","summary":"New comment — summary pending review."},
             {"commenter":"Comment from The Digital Chamber","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0038","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0038","summary":"New comment — summary pending review."},
             {"commenter":"Comment from GoWest Credit Union Association","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0037","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0037","summary":"New comment — summary pending review."}
+        ,
+            {"commenter":"Comment from Corporate Credit Union Alliance","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0040","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0040","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from California and Nevada Credit Union Leagues","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0039","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0039","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from Utah Credit Union Association","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0041","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0041","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from NATIONAL ASSOC OF STATE CREDIT UNION SUPERVISORS","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0042","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0042","summary":"New comment — summary pending review."},
+            {"commenter":"Comment from Value Technology Foundation","type":"Unknown","date":"2026-04-14","commentId":"NCUA-2025-1335-0043","url":"https://www.regulations.gov/comment/NCUA-2025-1335-0043","summary":"New comment — summary pending review."}
         ]
     },
 {
