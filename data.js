@@ -435,7 +435,7 @@ const rulemakingsData = [
                 "title": "Investments in and Licensing of Permitted Payment Stablecoins Issuers"
             },
             "commentPeriod": {
-                "status": "open",
+                "status": "closed",
                 "startDate": "2026-02-12",
                 "endDate": "2026-04-13"
             },
