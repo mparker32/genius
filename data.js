@@ -186,6 +186,9 @@ const rulemakingsData = [
             {"commenter":"Rick Pate","type":"Unknown","date":"2026-04-15","commentId":"OCC-2025-0372-0072","url":"https://www.regulations.gov/comment/OCC-2025-0372-0072","summary":"New comment — summary pending review."},
             {"commenter":"Stand With Crypto Texas","type":"Unknown","date":"2026-04-15","commentId":"OCC-2025-0372-0073","url":"https://www.regulations.gov/comment/OCC-2025-0372-0073","summary":"New comment — summary pending review."},
             {"commenter":"Capital Markets & Technology Partners","type":"Unknown","date":"2026-04-15","commentId":"OCC-2025-0372-0074","url":"https://www.regulations.gov/comment/OCC-2025-0372-0074","summary":"New comment — summary pending review."}
+        ,
+            {"commenter":"Stand With Crypto Maryland","type":"Unknown","date":"2026-04-15","commentId":"OCC-2025-0372-0076","url":"https://www.regulations.gov/comment/OCC-2025-0372-0076","summary":"New comment — summary pending review."},
+            {"commenter":"South Dakota Autodealers Association","type":"Unknown","date":"2026-04-15","commentId":"OCC-2025-0372-0075","url":"https://www.regulations.gov/comment/OCC-2025-0372-0075","summary":"New comment — summary pending review."}
         ]
     },
 {
