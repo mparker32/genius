@@ -189,6 +189,15 @@ const rulemakingsData = [
         ,
             {"commenter":"Stand With Crypto Maryland","type":"Unknown","date":"2026-04-15","commentId":"OCC-2025-0372-0076","url":"https://www.regulations.gov/comment/OCC-2025-0372-0076","summary":"New comment — summary pending review."},
             {"commenter":"South Dakota Autodealers Association","type":"Unknown","date":"2026-04-15","commentId":"OCC-2025-0372-0075","url":"https://www.regulations.gov/comment/OCC-2025-0372-0075","summary":"New comment — summary pending review."}
+        ,
+            {"commenter":"Millbury National Bank","type":"Unknown","date":"2026-04-16","commentId":"OCC-2025-0372-0080","url":"https://www.regulations.gov/comment/OCC-2025-0372-0080","summary":"New comment — summary pending review."},
+            {"commenter":"Chip Crumpler","type":"Unknown","date":"2026-04-16","commentId":"OCC-2025-0372-0082","url":"https://www.regulations.gov/comment/OCC-2025-0372-0082","summary":"New comment — summary pending review."},
+            {"commenter":"Trent Hatley","type":"Unknown","date":"2026-04-16","commentId":"OCC-2025-0372-0084","url":"https://www.regulations.gov/comment/OCC-2025-0372-0084","summary":"New comment — summary pending review."},
+            {"commenter":"Anonymous 3","type":"Unknown","date":"2026-04-16","commentId":"OCC-2025-0372-0077","url":"https://www.regulations.gov/comment/OCC-2025-0372-0077","summary":"New comment — summary pending review."},
+            {"commenter":"Bob Loflin","type":"Unknown","date":"2026-04-16","commentId":"OCC-2025-0372-0081","url":"https://www.regulations.gov/comment/OCC-2025-0372-0081","summary":"New comment — summary pending review."},
+            {"commenter":"Jamie Caudle","type":"Unknown","date":"2026-04-16","commentId":"OCC-2025-0372-0083","url":"https://www.regulations.gov/comment/OCC-2025-0372-0083","summary":"New comment — summary pending review."},
+            {"commenter":"First Bank & Trust Company","type":"Unknown","date":"2026-04-16","commentId":"OCC-2025-0372-0079","url":"https://www.regulations.gov/comment/OCC-2025-0372-0079","summary":"New comment — summary pending review."},
+            {"commenter":"Stand With Crypto West Virginia","type":"Unknown","date":"2026-04-16","commentId":"OCC-2025-0372-0078","url":"https://www.regulations.gov/comment/OCC-2025-0372-0078","summary":"New comment — summary pending review."}
         ]
     },
 {
