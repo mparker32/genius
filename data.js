@@ -82,7 +82,7 @@ const rulemakingsData = [
         "deadlineDate": "2026-07-18",
         "rulemakingType": "required",
         "commentDeadline": "2026-05-01",
-        "commentUrl": "https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-9.html",
+        "commentUrl": "https://www.federalregister.gov/documents/2026/03/02/2026-04089/implementing-the-guiding-and-establishing-national-innovation-for-us-stablecoins-act-for-the",
         "docketId": "OCC-2025-0372",
         "commentsPageUrl": "https://www.regulations.gov/docket/OCC-2025-0372/comments",
         "rulemakingStages": {
