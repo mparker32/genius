@@ -710,6 +710,7 @@ function calculateOverallProgress() {
 function updateOverallProgress() {
     // Calculate rulemaking progress stats for pipeline view
     let openCommentCount = 0;  // Currently open for comment (subset of proposed)
+    let closedCommentCount = 0; // Comment period closed (subset of proposed)
     let proposedCount = 0;     // All NPRMs issued (includes open for comment)
     let finalRuleCount = 0;    // Final rules published
 
@@ -725,6 +726,8 @@ function updateOverallProgress() {
                 // Also track if currently open for comment
                 if (status.isOpenForComment) {
                     openCommentCount++;
+                } else if (item.rulemakingStages?.commentPeriod?.status === 'closed') {
+                    closedCommentCount++;
                 }
             }
         }
@@ -764,6 +767,14 @@ function updateOverallProgress() {
     const openCommentNumber = document.getElementById('openCommentNumber');
     if (openCommentNumber) {
         openCommentNumber.textContent = openCommentCount;
+    }
+    const closedCommentNumber = document.getElementById('closedCommentNumber');
+    if (closedCommentNumber) {
+        closedCommentNumber.textContent = closedCommentCount;
+    }
+    const nprmIssuedNumber = document.getElementById('nprmIssuedNumber');
+    if (nprmIssuedNumber) {
+        nprmIssuedNumber.textContent = proposedCount;
     }
 
     // Timeline progress

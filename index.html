@@ -55,11 +55,22 @@
                 <!-- Rulemaking Stage Progress -->
                 <div class="progress-block primary">
                     <div class="progress-block-header">
-                        <span class="progress-block-title">Open for Comment</span>
-                        <span class="progress-block-subtitle">Rulemakings accepting public input</span>
+                        <span class="progress-block-title">NPRMs Issued</span>
+                        <span class="progress-block-subtitle">Proposed rules &amp; comment status</span>
                     </div>
-                    <div class="progress-main">
-                        <div class="open-comment-number" id="openCommentNumber">0</div>
+                    <div class="progress-main" style="display: flex; gap: 24px; align-items: center;">
+                        <div style="text-align: center;">
+                            <div class="open-comment-number" id="openCommentNumber">0</div>
+                            <div style="font-size: 0.75rem; color: #64748b; margin-top: 2px;">Open for Comment</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div class="open-comment-number" id="closedCommentNumber" style="color: #94a3b8;">0</div>
+                            <div style="font-size: 0.75rem; color: #64748b; margin-top: 2px;">Comments Closed</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div class="open-comment-number" id="nprmIssuedNumber" style="color: #3b82f6;">0</div>
+                            <div style="font-size: 0.75rem; color: #64748b; margin-top: 2px;">Total Issued</div>
+                        </div>
                     </div>
                     <div class="stage-progress-bars">
                         <div class="stage-progress-row">
