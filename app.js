@@ -19,6 +19,18 @@ let priorityFilterActive = false;
 function filterOpenForComment() {
     document.getElementById('publicationFilter').value = 'open-comment';
     document.getElementById('openCommentBtn').classList.add('active');
+    document.getElementById('closedCommentBtn').classList.remove('active');
+    document.getElementById('closedCommentBtn').classList.remove('active');
+    document.getElementById('preRulemakingBtn').classList.remove('active');
+    document.getElementById('notNoticedBtn').classList.remove('active');
+    filterAndSort();
+}
+
+function filterClosedForComment() {
+    document.getElementById('publicationFilter').value = 'nprm';
+    document.getElementById('closedCommentBtn').classList.add('active');
+    document.getElementById('openCommentBtn').classList.remove('active');
+    document.getElementById('closedCommentBtn').classList.remove('active');
     document.getElementById('preRulemakingBtn').classList.remove('active');
     document.getElementById('notNoticedBtn').classList.remove('active');
     filterAndSort();
@@ -27,6 +39,7 @@ function filterOpenForComment() {
 function filterPreRulemaking() {
     document.getElementById('publicationFilter').value = 'anprm';
     document.getElementById('preRulemakingBtn').classList.add('active');
+    document.getElementById('closedCommentBtn').classList.remove('active');
     document.getElementById('openCommentBtn').classList.remove('active');
     document.getElementById('notNoticedBtn').classList.remove('active');
     filterAndSort();
@@ -35,6 +48,7 @@ function filterPreRulemaking() {
 function filterNotNoticed() {
     document.getElementById('publicationFilter').value = 'not-noticed';
     document.getElementById('notNoticedBtn').classList.add('active');
+    document.getElementById('closedCommentBtn').classList.remove('active');
     document.getElementById('openCommentBtn').classList.remove('active');
     document.getElementById('preRulemakingBtn').classList.remove('active');
     filterAndSort();
@@ -46,6 +60,7 @@ function clearAllFilters() {
     document.getElementById('rulemakingTypeFilter').value = '';
     document.getElementById('searchBox').value = '';
     document.getElementById('openCommentBtn').classList.remove('active');
+    document.getElementById('closedCommentBtn').classList.remove('active');
     document.getElementById('preRulemakingBtn').classList.remove('active');
     document.getElementById('notNoticedBtn').classList.remove('active');
     var pb = document.getElementById('priorityBtn'); if (pb) pb.classList.remove('active');
@@ -970,6 +985,10 @@ function filterAndSort() {
     }
     if (preRulemakingBtn) {
         preRulemakingBtn.classList.toggle('active', publicationFilter === 'anprm');
+    }
+    const closedCommentBtn = document.getElementById('closedCommentBtn');
+    if (closedCommentBtn) {
+        closedCommentBtn.classList.toggle('active', publicationFilter === 'nprm');
     }
     if (notNoticedBtn) {
         notNoticedBtn.classList.toggle('active', publicationFilter === 'not-noticed');
