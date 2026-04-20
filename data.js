@@ -134,22 +134,22 @@ const rulemakingsData = [
             {"commenter":"OurFiin Inc.","type":"Company","date":"2026-03-17","commentId":"OCC-2025-0372-0025","url":"https://www.regulations.gov/comment/OCC-2025-0372-0025","summary":"Supports the OCC's proposed prudential framework; provides conceptual observations on board-grade governance approaches for supervisory consistency."},
             {"commenter":"Sutton Bank","type":"Bank","date":"2026-03-17","commentId":"OCC-2025-0372-0026","url":"https://www.regulations.gov/comment/OCC-2025-0372-0026","summary":"Substantive comments submitted as attachment on the proposed stablecoin issuance rules."}
         ,
-            {"commenter":"Kevin Smith","type":"Unknown","date":"2026-03-23","commentId":"OCC-2025-0372-0029","url":"https://www.regulations.gov/comment/OCC-2025-0372-0029","summary":"New comment — summary pending review."}
+            {"commenter":"Kevin Smith","type":"Unknown","date":"2026-03-23","commentId":"OCC-2025-0372-0029","url":"https://www.regulations.gov/comment/OCC-2025-0372-0029","summary":"Brief comment referencing the NPRM; minimal substantive content."}
         ,
-            {"commenter":"Anonymous 1","type":"Unknown","date":"2026-03-24","commentId":"OCC-2025-0372-0032","url":"https://www.regulations.gov/comment/OCC-2025-0372-0032","summary":"New comment — summary pending review."}
+            {"commenter":"Anonymous 1","type":"Unknown","date":"2026-03-24","commentId":"OCC-2025-0372-0032","url":"https://www.regulations.gov/comment/OCC-2025-0372-0032","summary":"Comment submitted as attachment (content not available inline)."}
         ,
-            {"commenter":"Anonymous 2","type":"Unknown","date":"2026-03-26","commentId":"OCC-2025-0372-0033","url":"https://www.regulations.gov/comment/OCC-2025-0372-0033","summary":"New comment — summary pending review."}
+            {"commenter":"Anonymous 2","type":"Unknown","date":"2026-03-26","commentId":"OCC-2025-0372-0033","url":"https://www.regulations.gov/comment/OCC-2025-0372-0033","summary":"Concerned citizen urging careful regulation of stablecoins under the GENIUS Act, expressing concerns about consumer protections in the proposed framework."}
         ,
-            {"commenter":"Senmonni, LLC","type":"Unknown","date":"2026-03-30","commentId":"OCC-2025-0372-0035","url":"https://www.regulations.gov/comment/OCC-2025-0372-0035","summary":"New comment — summary pending review."},
-            {"commenter":"B2BTechnique","type":"Unknown","date":"2026-03-30","commentId":"OCC-2025-0372-0034","url":"https://www.regulations.gov/comment/OCC-2025-0372-0034","summary":"New comment — summary pending review."}
+            {"commenter":"Senmonni, LLC","type":"Unknown","date":"2026-03-30","commentId":"OCC-2025-0372-0035","url":"https://www.regulations.gov/comment/OCC-2025-0372-0035","summary":"Black-owned, Veteran-founded fintech startup supporting the nonbank stablecoin issuer pathway to build affordable remittance services for underbanked diaspora communities in the U.S.-to-Caribbean corridor."},
+            {"commenter":"B2BTechnique","type":"Unknown","date":"2026-03-30","commentId":"OCC-2025-0372-0034","url":"https://www.regulations.gov/comment/OCC-2025-0372-0034","summary":"Comment submitted as attachment (content not available inline)."}
         ,
-            {"commenter":"Courtney Lynn Atwood","type":"Unknown","date":"2026-04-01","commentId":"OCC-2025-0372-0040","url":"https://www.regulations.gov/comment/OCC-2025-0372-0040","summary":"New comment — summary pending review."}
+            {"commenter":"Courtney Lynn Atwood","type":"Unknown","date":"2026-04-01","commentId":"OCC-2025-0372-0040","url":"https://www.regulations.gov/comment/OCC-2025-0372-0040","summary":"Comment submitted as attachment (content not available inline)."}
         ,
-            {"commenter":"Lee Widman","type":"Unknown","date":"2026-04-01","commentId":"OCC-2025-0372-0041","url":"https://www.regulations.gov/comment/OCC-2025-0372-0041","summary":"New comment — summary pending review."}
+            {"commenter":"Lee Widman","type":"Unknown","date":"2026-04-01","commentId":"OCC-2025-0372-0041","url":"https://www.regulations.gov/comment/OCC-2025-0372-0041","summary":"Calls for FDIC insurance coverage on stablecoins and federal-only regulation, warning that state-level variation will cause enforcement problems."}
         ,
-            {"commenter":"Mark Gidley","type":"Unknown","date":"2026-04-08","commentId":"OCC-2025-0372-0045","url":"https://www.regulations.gov/comment/OCC-2025-0372-0045","summary":"New comment — summary pending review."},
-            {"commenter":"Basis Protocol","type":"Unknown","date":"2026-04-08","commentId":"OCC-2025-0372-0043","url":"https://www.regulations.gov/comment/OCC-2025-0372-0043","summary":"New comment — summary pending review."},
-            {"commenter":"Adam Ogilvie","type":"Unknown","date":"2026-04-08","commentId":"OCC-2025-0372-0042","url":"https://www.regulations.gov/comment/OCC-2025-0372-0042","summary":"New comment — summary pending review."},
+            {"commenter":"Mark Gidley","type":"Unknown","date":"2026-04-08","commentId":"OCC-2025-0372-0045","url":"https://www.regulations.gov/comment/OCC-2025-0372-0045","summary":"Alabama state legislator highlighting the importance of community banks and credit unions to small businesses and the state economy."},
+            {"commenter":"Basis Protocol","type":"Unknown","date":"2026-04-08","commentId":"OCC-2025-0372-0043","url":"https://www.regulations.gov/comment/OCC-2025-0372-0043","summary":"Recommends standardized, open-methodology risk measurement standards and a cross-issuer comparability framework for stablecoin disclosure requirements."},
+            {"commenter":"Adam Ogilvie","type":"Unknown","date":"2026-04-08","commentId":"OCC-2025-0372-0042","url":"https://www.regulations.gov/comment/OCC-2025-0372-0042","summary":"Proposes a DigiByte blockchain-based stablecoin solution (details in attached PDF)."},
             {"commenter":"Ed Oliver","type":"Unknown","date":"2026-04-08","commentId":"OCC-2025-0372-0046","url":"https://www.regulations.gov/comment/OCC-2025-0372-0046","summary":"New comment — summary pending review."},
             {"commenter":"The Network Firm LLP","type":"Unknown","date":"2026-04-08","commentId":"OCC-2025-0372-0044","url":"https://www.regulations.gov/comment/OCC-2025-0372-0044","summary":"New comment — summary pending review."}
         ,
