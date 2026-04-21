@@ -198,6 +198,20 @@ const rulemakingsData = [
             {"commenter":"Jamie Caudle","type":"Unknown","date":"2026-04-16","commentId":"OCC-2025-0372-0083","url":"https://www.regulations.gov/comment/OCC-2025-0372-0083","summary":"New comment — summary pending review."},
             {"commenter":"First Bank & Trust Company","type":"Unknown","date":"2026-04-16","commentId":"OCC-2025-0372-0079","url":"https://www.regulations.gov/comment/OCC-2025-0372-0079","summary":"New comment — summary pending review."},
             {"commenter":"Stand With Crypto West Virginia","type":"Unknown","date":"2026-04-16","commentId":"OCC-2025-0372-0078","url":"https://www.regulations.gov/comment/OCC-2025-0372-0078","summary":"New comment — summary pending review."}
+        ,
+            {"commenter":"Casey Runkles","type":"Unknown","date":"2026-04-20","commentId":"OCC-2025-0372-0086","url":"https://www.regulations.gov/comment/OCC-2025-0372-0086","summary":"New comment — summary pending review."},
+            {"commenter":"Stand With Crypto Idaho","type":"Unknown","date":"2026-04-20","commentId":"OCC-2025-0372-0089","url":"https://www.regulations.gov/comment/OCC-2025-0372-0089","summary":"New comment — summary pending review."},
+            {"commenter":"Commercial Bank & Trust Co.","type":"Unknown","date":"2026-04-20","commentId":"OCC-2025-0372-0085","url":"https://www.regulations.gov/comment/OCC-2025-0372-0085","summary":"New comment — summary pending review."},
+            {"commenter":"First State Bank Gainesville Texas","type":"Unknown","date":"2026-04-20","commentId":"OCC-2025-0372-0087","url":"https://www.regulations.gov/comment/OCC-2025-0372-0087","summary":"New comment — summary pending review."},
+            {"commenter":"Stand With Crypto Wisconsin","type":"Unknown","date":"2026-04-20","commentId":"OCC-2025-0372-0088","url":"https://www.regulations.gov/comment/OCC-2025-0372-0088","summary":"New comment — summary pending review."},
+            {"commenter":"Aleo Network Foundation","type":"Unknown","date":"2026-04-20","commentId":"OCC-2025-0372-0093","url":"https://www.regulations.gov/comment/OCC-2025-0372-0093","summary":"New comment — summary pending review."},
+            {"commenter":"John Harrison","type":"Unknown","date":"2026-04-20","commentId":"OCC-2025-0372-0090","url":"https://www.regulations.gov/comment/OCC-2025-0372-0090","summary":"New comment — summary pending review."},
+            {"commenter":"Innovative Payments Association","type":"Unknown","date":"2026-04-20","commentId":"OCC-2025-0372-0092","url":"https://www.regulations.gov/comment/OCC-2025-0372-0092","summary":"New comment — summary pending review."},
+            {"commenter":"Piedmont Federal Bank","type":"Unknown","date":"2026-04-20","commentId":"OCC-2025-0372-0094","url":"https://www.regulations.gov/comment/OCC-2025-0372-0094","summary":"New comment — summary pending review."},
+            {"commenter":"Greenwood Chamber of Commerce","type":"Unknown","date":"2026-04-20","commentId":"OCC-2025-0372-0095","url":"https://www.regulations.gov/comment/OCC-2025-0372-0095","summary":"New comment — summary pending review."},
+            {"commenter":"Ben Harrison","type":"Unknown","date":"2026-04-20","commentId":"OCC-2025-0372-0091","url":"https://www.regulations.gov/comment/OCC-2025-0372-0091","summary":"New comment — summary pending review."},
+            {"commenter":"Siloam Springs Chamber of Commerce","type":"Unknown","date":"2026-04-20","commentId":"OCC-2025-0372-0096","url":"https://www.regulations.gov/comment/OCC-2025-0372-0096","summary":"New comment — summary pending review."},
+            {"commenter":"Rio Grande Valley Hispanic Chamber of Commerce","type":"Unknown","date":"2026-04-20","commentId":"OCC-2025-0372-0097","url":"https://www.regulations.gov/comment/OCC-2025-0372-0097","summary":"New comment — summary pending review."}
         ]
     },
 {
