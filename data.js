@@ -227,6 +227,14 @@ const rulemakingsData = [
             {"commenter":"Texas Association of Mexican American Chambers of Commerce","type":"Unknown","date":"2026-04-23","commentId":"OCC-2025-0372-0107","url":"https://www.regulations.gov/comment/OCC-2025-0372-0107","summary":"New comment — summary pending review."}
         ,
             {"commenter":"Lane Jean","type":"Unknown","date":"2026-04-24","commentId":"OCC-2025-0372-0108","url":"https://www.regulations.gov/comment/OCC-2025-0372-0108","summary":"New comment — summary pending review."}
+        ,
+            {"commenter":"Brad Jake","type":"Unknown","date":"2026-04-24","commentId":"OCC-2025-0372-0109","url":"https://www.regulations.gov/comment/OCC-2025-0372-0109","summary":"New comment — summary pending review."},
+            {"commenter":"HomeTrust Bank","type":"Unknown","date":"2026-04-24","commentId":"OCC-2025-0372-0112","url":"https://www.regulations.gov/comment/OCC-2025-0372-0112","summary":"New comment — summary pending review."},
+            {"commenter":"Iowa Bankers Association","type":"Unknown","date":"2026-04-24","commentId":"OCC-2025-0372-0113","url":"https://www.regulations.gov/comment/OCC-2025-0372-0113","summary":"New comment — summary pending review."},
+            {"commenter":"Greater Easley Chamber of Commerce","type":"Unknown","date":"2026-04-24","commentId":"OCC-2025-0372-0115","url":"https://www.regulations.gov/comment/OCC-2025-0372-0115","summary":"New comment — summary pending review."},
+            {"commenter":"Matt Roby","type":"Unknown","date":"2026-04-24","commentId":"OCC-2025-0372-0110","url":"https://www.regulations.gov/comment/OCC-2025-0372-0110","summary":"New comment — summary pending review."},
+            {"commenter":"William Parker","type":"Unknown","date":"2026-04-24","commentId":"OCC-2025-0372-0111","url":"https://www.regulations.gov/comment/OCC-2025-0372-0111","summary":"New comment — summary pending review."},
+            {"commenter":"South Dakota Chamber of Commerce and Industry","type":"Unknown","date":"2026-04-24","commentId":"OCC-2025-0372-0114","url":"https://www.regulations.gov/comment/OCC-2025-0372-0114","summary":"New comment — summary pending review."}
         ]
     },
 {
