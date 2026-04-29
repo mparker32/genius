@@ -247,6 +247,13 @@ const rulemakingsData = [
             {"commenter":"Randy Wood","type":"Unknown","date":"2026-04-28","commentId":"OCC-2025-0372-0126","url":"https://www.regulations.gov/comment/OCC-2025-0372-0126","summary":"New comment — summary pending review."},
             {"commenter":"Seth C. Oranburg","type":"Unknown","date":"2026-04-28","commentId":"OCC-2025-0372-0127","url":"https://www.regulations.gov/comment/OCC-2025-0372-0127","summary":"New comment — summary pending review."},
             {"commenter":"First National Bank Texas","type":"Unknown","date":"2026-04-28","commentId":"OCC-2025-0372-0124","url":"https://www.regulations.gov/comment/OCC-2025-0372-0124","summary":"New comment — summary pending review."}
+        ,
+            {"commenter":"Moody's Ratings","type":"Unknown","date":"2026-04-28","commentId":"OCC-2025-0372-0128","url":"https://www.regulations.gov/comment/OCC-2025-0372-0128","summary":"New comment — summary pending review."},
+            {"commenter":"T. Marden","type":"Unknown","date":"2026-04-28","commentId":"OCC-2025-0372-0130","url":"https://www.regulations.gov/comment/OCC-2025-0372-0130","summary":"New comment — summary pending review."},
+            {"commenter":"Global Legal Entity Identifier Foundation","type":"Unknown","date":"2026-04-28","commentId":"OCC-2025-0372-0131","url":"https://www.regulations.gov/comment/OCC-2025-0372-0131","summary":"New comment — summary pending review."},
+            {"commenter":"Canandaigua National Bank and Trust Company","type":"Unknown","date":"2026-04-28","commentId":"OCC-2025-0372-0132","url":"https://www.regulations.gov/comment/OCC-2025-0372-0132","summary":"New comment — summary pending review."},
+            {"commenter":"Michigan Bankers Association","type":"Unknown","date":"2026-04-28","commentId":"OCC-2025-0372-0129","url":"https://www.regulations.gov/comment/OCC-2025-0372-0129","summary":"New comment — summary pending review."},
+            {"commenter":"Stand With Crypto Arizona","type":"Unknown","date":"2026-04-28","commentId":"OCC-2025-0372-0133","url":"https://www.regulations.gov/comment/OCC-2025-0372-0133","summary":"New comment — summary pending review."}
         ]
     },
 {
