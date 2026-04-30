@@ -254,6 +254,28 @@ const rulemakingsData = [
             {"commenter":"Canandaigua National Bank and Trust Company","type":"Unknown","date":"2026-04-28","commentId":"OCC-2025-0372-0132","url":"https://www.regulations.gov/comment/OCC-2025-0372-0132","summary":"New comment — summary pending review."},
             {"commenter":"Michigan Bankers Association","type":"Unknown","date":"2026-04-28","commentId":"OCC-2025-0372-0129","url":"https://www.regulations.gov/comment/OCC-2025-0372-0129","summary":"New comment — summary pending review."},
             {"commenter":"Stand With Crypto Arizona","type":"Unknown","date":"2026-04-28","commentId":"OCC-2025-0372-0133","url":"https://www.regulations.gov/comment/OCC-2025-0372-0133","summary":"New comment — summary pending review."}
+        ,
+            {"commenter":"Anonymous 5","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0147","url":"https://www.regulations.gov/comment/OCC-2025-0372-0147","summary":"New comment — summary pending review."},
+            {"commenter":"DTI Foundation","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0139","url":"https://www.regulations.gov/comment/OCC-2025-0372-0139","summary":"New comment — summary pending review."},
+            {"commenter":"Stand With Crypto Massachusetts","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0145","url":"https://www.regulations.gov/comment/OCC-2025-0372-0145","summary":"New comment — summary pending review."},
+            {"commenter":"TauriPay, a Public Benefit Corporation","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0150","url":"https://www.regulations.gov/comment/OCC-2025-0372-0150","summary":"New comment — summary pending review."},
+            {"commenter":"Capitol Federal Savings Bank","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0153","url":"https://www.regulations.gov/comment/OCC-2025-0372-0153","summary":"New comment — summary pending review."},
+            {"commenter":"Kish Bank","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0141","url":"https://www.regulations.gov/comment/OCC-2025-0372-0141","summary":"New comment — summary pending review."},
+            {"commenter":"Kyle France","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0140","url":"https://www.regulations.gov/comment/OCC-2025-0372-0140","summary":"New comment — summary pending review."},
+            {"commenter":"International Organization for Standardization (ISO), Standards Advisory Group (SAG)","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0143","url":"https://www.regulations.gov/comment/OCC-2025-0372-0143","summary":"New comment — summary pending review."},
+            {"commenter":"Stand With Crypto","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0136","url":"https://www.regulations.gov/comment/OCC-2025-0372-0136","summary":"New comment — summary pending review."},
+            {"commenter":"Jack Henry & Associates, Inc.","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0146","url":"https://www.regulations.gov/comment/OCC-2025-0372-0146","summary":"New comment — summary pending review."},
+            {"commenter":"Columbia Bank","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0149","url":"https://www.regulations.gov/comment/OCC-2025-0372-0149","summary":"New comment — summary pending review."},
+            {"commenter":"Anonymous 6","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0151","url":"https://www.regulations.gov/comment/OCC-2025-0372-0151","summary":"New comment — summary pending review."},
+            {"commenter":"BAFT (Bankers Association for Finance and Trade)","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0152","url":"https://www.regulations.gov/comment/OCC-2025-0372-0152","summary":"New comment — summary pending review."},
+            {"commenter":"Stand With Crypto Alaska","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0138","url":"https://www.regulations.gov/comment/OCC-2025-0372-0138","summary":"New comment — summary pending review."},
+            {"commenter":"Mona Armande","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0137","url":"https://www.regulations.gov/comment/OCC-2025-0372-0137","summary":"New comment — summary pending review."},
+            {"commenter":"Rodney Eury","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0148","url":"https://www.regulations.gov/comment/OCC-2025-0372-0148","summary":"New comment — summary pending review."},
+            {"commenter":"Lockton Companies","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0155","url":"https://www.regulations.gov/comment/OCC-2025-0372-0155","summary":"New comment — summary pending review."},
+            {"commenter":"Stand With Crypto Pennsylvania","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0156","url":"https://www.regulations.gov/comment/OCC-2025-0372-0156","summary":"New comment — summary pending review."},
+            {"commenter":"Massachusetts Bankers Association","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0144","url":"https://www.regulations.gov/comment/OCC-2025-0372-0144","summary":"New comment — summary pending review."},
+            {"commenter":"XBRL US","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0142","url":"https://www.regulations.gov/comment/OCC-2025-0372-0142","summary":"New comment — summary pending review."},
+            {"commenter":"U.S. Bank","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0154","url":"https://www.regulations.gov/comment/OCC-2025-0372-0154","summary":"New comment — summary pending review."}
         ]
     },
 {
