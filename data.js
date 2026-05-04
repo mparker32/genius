@@ -535,7 +535,7 @@ const rulemakingsData = [
             "effective": { "status": "not-started" }
         },
         "rulemakingType": "required",
-        "paradigmCommentary": "",
+        "paradigmCommentary": "Paradigm filed a comment letter broadly supporting the NCUA’s proposal to implement the GENIUS Act, which lays out a thoughtful framework for licensing and supervising payment stablecoin issuers. We raise two key improvements: removing a proposed restriction that would prevent federally insured credit unions from investing in stablecoin issuers licensed by other regulators, and establishing a clear post-event transition framework for involuntary ownership changes like bankruptcy or insolvency. Together, these changes would create a more consistent, pro-competition stablecoin regime that protects consumers and gives the industry clear rules to build on.<br><br><a href=\"https://www.paradigm.xyz/2026/04/paradigm-files-comment-letter-on-ncua-s-genius-rulemaking\" target=\"_blank\">Read our blog post</a> | <a href=\"https://cdn.sanity.io/files/dgybcd83/production/5f9ea839c4fe527dd0db7d7ac6e8642b54d1a603.pdf\" target=\"_blank\">View our comment letter (PDF)</a>",
         "paradigmAttitude": "",
         "submittedComments": [
             {
