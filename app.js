@@ -435,6 +435,11 @@ function renderRulemakingStages(item) {
     if (currentStageIndex === -1 && lastCompletedIndex >= 0) {
         currentStageIndex = lastCompletedIndex + 1;
     }
+    // If comment period is closed, the rulemaking has progressed past NPRM
+    // Move currentStageIndex to finalRule (waiting stage)
+    if (stages.commentPeriod && stages.commentPeriod.status === 'closed') {
+        currentStageIndex = 3; // finalRule index
+    }
 
     const stepsHtml = stageConfig.map((config, index) => {
         const stage = stages[config.key] || { status: 'not-started' };
