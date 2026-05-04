@@ -95,7 +95,7 @@ const rulemakingsData = [
                 "title": "GENIUS Act Regulations: Notice of Proposed Rulemaking"
         },
         "commentPeriod": {
-                "status": "open",
+                "status": "closed",
                 "startDate": "2026-03-03",
                 "endDate": "2026-05-01",
                 "notes": "60-day comment period. Published in Federal Register."
