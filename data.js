@@ -276,6 +276,11 @@ const rulemakingsData = [
             {"commenter":"Massachusetts Bankers Association","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0144","url":"https://www.regulations.gov/comment/OCC-2025-0372-0144","summary":"New comment — summary pending review."},
             {"commenter":"XBRL US","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0142","url":"https://www.regulations.gov/comment/OCC-2025-0372-0142","summary":"New comment — summary pending review."},
             {"commenter":"U.S. Bank","type":"Unknown","date":"2026-04-29","commentId":"OCC-2025-0372-0154","url":"https://www.regulations.gov/comment/OCC-2025-0372-0154","summary":"New comment — summary pending review."}
+        ,
+            {"commenter":"Global Blockchain Business Council","type":"Unknown","date":"2026-05-04","commentId":"OCC-2025-0372-0254","url":"https://www.regulations.gov/comment/OCC-2025-0372-0254","summary":"New comment — summary pending review."},
+            {"commenter":"Proof.com","type":"Unknown","date":"2026-05-04","commentId":"OCC-2025-0372-0256","url":"https://www.regulations.gov/comment/OCC-2025-0372-0256","summary":"New comment — summary pending review."},
+            {"commenter":"National Association of Home Builders","type":"Unknown","date":"2026-05-04","commentId":"OCC-2025-0372-0255","url":"https://www.regulations.gov/comment/OCC-2025-0372-0255","summary":"New comment — summary pending review."},
+            {"commenter":"DDCP Foundation, Inc.","type":"Unknown","date":"2026-05-04","commentId":"OCC-2025-0372-0257","url":"https://www.regulations.gov/comment/OCC-2025-0372-0257","summary":"New comment — summary pending review."}
         ]
     },
 {
