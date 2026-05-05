@@ -107,7 +107,7 @@ const rulemakingsData = [
                 "status": "not-started"
         }
 },
-        "paradigmCommentary": "",
+        "paradigmCommentary": "Paradigm filed a comment letter broadly supporting the OCC’s proposal to implement the GENIUS Act, while raising several critical issues that, if left unaddressed, would undermine Congress’s design for stablecoins. Our biggest concern is the OCC’s treatment of the Act’s yield provisions — the proposal improperly expands a narrow prohibition on issuers paying yield into a broad restriction that would sweep in unrelated third parties and relies on an unjustified rebuttable presumption. We also flag issues around white-labeling, reporting burdens, and multi-chain operations, and urge the OCC to get this rulemaking right — because if the rules are done well, American firms could lead the global stablecoin market for decades to come.<br><br><a href=\"https://www.paradigm.xyz/2026/05/paradigm-files-comment-letter-on-the-occ-s-genius-rulemaking\" target=\"_blank\">Read our blog post</a> | <a href=\"https://cdn.sanity.io/files/dgybcd83/production/d4faae9ad2e85d006725d293c069e8a26e4513de.pdf\" target=\"_blank\">View our comment letter (PDF)</a>",
         "paradigmAttitude": "",
         "submittedComments": [
             {"commenter":"Michael Ravnitzky","type":"Individual","date":"2026-03-02","commentId":"OCC-2025-0372-0002","url":"https://www.regulations.gov/comment/OCC-2025-0372-0002","summary":"Substantive comments submitted as attachment on the OCC's proposed stablecoin issuance framework."},
