@@ -353,6 +353,13 @@ const rulemakingsData = [
             {"commenter":"Greg West","type":"Unknown","date":"2026-05-04","commentId":"OCC-2025-0372-0309","url":"https://www.regulations.gov/comment/OCC-2025-0372-0309","summary":"New comment — summary pending review."},
             {"commenter":"Solari, Inc.","type":"Unknown","date":"2026-05-04","commentId":"OCC-2025-0372-0301","url":"https://www.regulations.gov/comment/OCC-2025-0372-0301","summary":"New comment — summary pending review."},
             {"commenter":"PayPal, Inc.","type":"Unknown","date":"2026-05-04","commentId":"OCC-2025-0372-0303","url":"https://www.regulations.gov/comment/OCC-2025-0372-0303","summary":"New comment — summary pending review."}
+        ,
+            {"commenter":"Bank of Ann Arbor","type":"Unknown","date":"2026-05-05","commentId":"OCC-2025-0372-0328","url":"https://www.regulations.gov/comment/OCC-2025-0372-0328","summary":"New comment — summary pending review."},
+            {"commenter":"Multicoin Capital Management, LLC","type":"Unknown","date":"2026-05-05","commentId":"OCC-2025-0372-0330","url":"https://www.regulations.gov/comment/OCC-2025-0372-0330","summary":"New comment — summary pending review."},
+            {"commenter":"Robert E. Rutkowski","type":"Unknown","date":"2026-05-05","commentId":"OCC-2025-0372-0331","url":"https://www.regulations.gov/comment/OCC-2025-0372-0331","summary":"New comment — summary pending review."},
+            {"commenter":"Hunter St. James","type":"Unknown","date":"2026-05-05","commentId":"OCC-2025-0372-0339","url":"https://www.regulations.gov/comment/OCC-2025-0372-0339","summary":"New comment — summary pending review."},
+            {"commenter":"Friends of the African Union","type":"Unknown","date":"2026-05-05","commentId":"OCC-2025-0372-0338","url":"https://www.regulations.gov/comment/OCC-2025-0372-0338","summary":"New comment — summary pending review."},
+            {"commenter":"Denali Protocol","type":"Unknown","date":"2026-05-05","commentId":"OCC-2025-0372-0329","url":"https://www.regulations.gov/comment/OCC-2025-0372-0329","summary":"New comment — summary pending review."}
         ]
     },
 {
