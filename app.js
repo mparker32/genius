@@ -1217,6 +1217,7 @@ function renderRulemakings() {
 
             <div class="expanded-content">
                 ${renderRulemakingStages(item)}
+                ${item.paradigmCommentary ? `<div class="paradigm-commentary-section"><h3>🏛 Paradigm's Take</h3><div class="paradigm-commentary-text">${item.paradigmCommentary}</div></div>` : ""}
 
                 ${renderCommentSection(item)}
             </div>
