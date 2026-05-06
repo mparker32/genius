@@ -360,6 +360,8 @@ const rulemakingsData = [
             {"commenter":"Hunter St. James","type":"Unknown","date":"2026-05-05","commentId":"OCC-2025-0372-0339","url":"https://www.regulations.gov/comment/OCC-2025-0372-0339","summary":"New comment — summary pending review."},
             {"commenter":"Friends of the African Union","type":"Unknown","date":"2026-05-05","commentId":"OCC-2025-0372-0338","url":"https://www.regulations.gov/comment/OCC-2025-0372-0338","summary":"New comment — summary pending review."},
             {"commenter":"Denali Protocol","type":"Unknown","date":"2026-05-05","commentId":"OCC-2025-0372-0329","url":"https://www.regulations.gov/comment/OCC-2025-0372-0329","summary":"New comment — summary pending review."}
+        ,
+            {"commenter":"Charity & Security Network","type":"Unknown","date":"2026-05-05","commentId":"OCC-2025-0372-0340","url":"https://www.regulations.gov/comment/OCC-2025-0372-0340","summary":"New comment — summary pending review."}
         ]
     },
 {
